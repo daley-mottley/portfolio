@@ -183,6 +183,29 @@ body.offcanvas #colorlib-aside,
 .author-img {
     box-shadow: -5px 7px 19px 1px #0a0a0624;
 }
+div.social-media-icons-container ul {
+  display: flex; /* Use Flexbox for alignment */
+  justify-content: center; /* Align items horizontally in the center */
+  align-items: center; /* Align items vertically in the center */
+  gap: 15px; /* Add space between the icons */
+  list-style: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+div.social-media-icons-container ul li a {
+  display: inline-flex; /* Ensures the anchor behaves like a flex container */
+  align-items: center; /* Align icon inside anchor */
+  justify-content: center; /* Center the icon inside anchor */
+ /* font-size: inherit; */ /* Adjust icon size */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the inherited text color */
+  transition: color 0.3s ease; /* Add smooth hover effect */
+}
+
+div.social-media-icons-container ul li a:hover {
+  color: #0073e6; /* Change color on hover */
+}
 
 /* SIDE MENU  - END */
 
