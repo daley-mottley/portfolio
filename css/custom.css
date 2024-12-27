@@ -207,6 +207,13 @@ div.social-media-icons-container ul li a:hover {
   color: #0073e6; /* Change color on hover */
 }
 
+div.social-media-icons-container ul li img {
+  width: 20px; /* Set width to match your desired icon size */
+  height: 20px; /* Ensure consistent height */
+  display: inline-block; /* Keep inline alignment */
+  vertical-align: middle; /* Align with text or other elements */
+}
+
 /* SIDE MENU  - END */
 
 /* ABOUT */
