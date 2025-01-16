@@ -1,4 +1,4 @@
-// script.js
+// custom.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -206,7 +206,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const textarea = entry.target;
-            const originalText = "Do you have a great idea on your mind or need help overcoming challenges in your business?\n\nSend me a message and I'll help you find a solution to your problem. 🙂";
+            const originalText = "Whether you’re looking to overcome a business challenge or turn your big idea into action, I’m here to make it happen.\n\nReach out today, and together we’ll find the perfect solution for your success!";
             const adjustedText = adjustPlaceholderText(originalText, textarea);
             textarea.placeholder = ''; // Clear the placeholder
             typeWriter(adjustedText, textarea); // Start typing animation
