@@ -1,0 +1,24 @@
+name: Deploy Production - daleymottley.com
+
+on:
+  push:
+    branches:
+       - main
+
+jobs:
+  deploy:
+    name: Deploy Production via daleymottley.com
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Upload files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.1
+        with:
+          server: ftpupload.net  
+          username: ${{ secrets.WEBHOST_USERNAME }} 
+          password: ${{ secrets.WEBHOST_PASSWORD }}  
+          local-dir: ./
+          server-dir: /daleymottley.com/htdocs/
