@@ -8,7 +8,7 @@
     <li>- 💬 Ask me about <strong>Workflow Automations</strong></li>
      <li>- 🌱 I’m currently learning <strong>Machine Learning</strong></li>
      <li>- 📫 How to reach me:  [daley.mottley@hotmail.com]</li>
-     <li>- 🔗 Visit my website ▻  <a href="https://dmotts.github.io/portfolio">daleymottley.com</a></li>
+     <li>- 🔗 Visit my website ▻  <a href="https://daleymottley.com">daleymottley.com</a></li>
      
    </ul>
   </div>
