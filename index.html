@@ -9,6 +9,18 @@
 	<meta name="keywords" content="artificial intelligence, web development, daley mottley, daleymottley, ai, chatbots, build a website, consultant" />
 	<meta name="author" content="Daley Mottley" />
 
+	<!-- Optimized font loading -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap&subset=latin" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700&display=swap&subset=latin" rel="stylesheet">
+
+	<!-- Preload critical assets -->
+	<link rel="preload" href="css/style.css" as="style">
+	<link rel="preload" href="css/bootstrap.css" as="style">
+	<link rel="preload" href="js/jquery.min.js" as="script">
+	<link rel="preload" href="js/bootstrap.min.js" as="script">
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" as="style">
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" as="style">
+
 	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="Daley Mottley | AI Consultant" />
 	<meta property="og:image" content="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719909061/Portfolio/profile-pic.png" />
@@ -27,29 +39,28 @@
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
 
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/animate.css" media="print" onload="this.media='all'">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/icomoon.css" media="print" onload="this.media='all'">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap.css" media="print" onload="this.media='all'">
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="css/flexslider.css" media="print" onload="this.media='all'">
 	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css" media="print" onload="this.media='all'">
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/owl.carousel.min.css" media="print" onload="this.media='all'">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css" media="print" onload="this.media='all'">
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
+	<link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
 	<!-- Custom CSS  -->
+	<link rel="stylesheet" href="css/custom.css" media="print" onload="this.media='all'">
 
-	<link rel="stylesheet" href="css/custom.css">
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js" defer></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
+	<script src="js/respond.min.js" defer></script>
 	<![endif]-->
 
 	<!-- Google tag (gtag.js) -->
@@ -58,14 +69,26 @@
 		window.dataLayer = window.dataLayer || [];
 		function gtag() {dataLayer.push(arguments);}
 		gtag('js', new Date());
-
 		gtag('config', 'G-EBJP4J0R5C');
 	</script>
 	<script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init push capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_d12Cfip5bAiE4Q82fjAJ5Oh4ygZ5k7ev14IvckWrLfq',{api_host:'https://us.i.posthog.com', person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
         })
-																																												</script>
+	</script>
+
+	<!-- Load non-critical CSS -->
+	<noscript>
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/icomoon.css">
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/flexslider.css">
+		<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+		<link rel="stylesheet" href="css/owl.carousel.min.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/custom.css">
+	</noscript>
 
 </head>
 
@@ -77,7 +100,8 @@
 			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 				<div class="text-center">
 					<div class="author-img"
-						style="background-image: url(https://res.cloudinary.com/dzpafdvkm/image/upload/v1719909061/Portfolio/profile-pic.png);">
+						style="background-image: url(https://res.cloudinary.com/dzpafdvkm/image/upload/v1719909061/Portfolio/profile-pic.png);"
+						loading="lazy">
 					</div>
 					<h1 id="colorlib-logo"><a href="index.html">Daley Mottley</a></h1>
 					<span class="position"><a href="#">AI Consultant</a> in Barbados</span>
@@ -180,7 +204,7 @@
 
 
 																<p class="animate-box" data-animate-effect="fadeInLeft">
-  <strong>Hi, I'm Daley Mottley</strong> — Welcome to my corner of the web! I’m an AI Consultant and Full-Stack Web Developer based in Barbados.
+  <strong>Hi, I'm Daley Mottley</strong> — Welcome to my corner of the web! I'm an AI Consultant and Full-Stack Web Developer based in Barbados.
 </p>
 
 <p class="animate-box" data-animate-effect="fadeInLeft">
@@ -540,7 +564,7 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 																AI,
 																it manages appointment scheduling, provides information on services, and
 																answers client inquiries. It offers personalized treatment recommendations
-																and integrates with the center’s booking systems for efficient management.
+																and integrates with the center's booking systems for efficient management.
 																This intelligent receptionist automates routine tasks, ensuring a smooth and
 																welcoming experience that boosts operational efficiency and elevates the
 																client experience.</p>
@@ -984,7 +1008,6 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 
 
 												</div>
-
 
 												<div class="card-project-container col-md-12 animate-box"
 													data-animate-effect="fadeInLeft" data-category="Web Development">

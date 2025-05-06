@@ -30,10 +30,16 @@ This file is used to track all tasks related to the project. Each task should be
 
 ### Website Performance Optimization - [06/May/2024]
 - **Priority**: Medium
-- **Status**: Not Started
+- **Status**: In Progress
 - **Description**: Optimize website loading speed and resource usage
 - **Assigned To**: Daley Mottley
-- **Notes**: Need to analyze current performance metrics
+- **Notes**: Implementing the following optimizations:
+  1. Image optimization and lazy loading
+  2. CSS and JavaScript minification
+  3. Resource preloading and caching
+  4. Font optimization
+  5. Third-party script optimization
+  6. Performance monitoring setup
 
 ### AI Projects Showcase - [06/May/2024]
 - **Priority**: High
