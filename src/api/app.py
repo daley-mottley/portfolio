@@ -2,7 +2,13 @@ from flask import Flask, request, jsonify
 import openai
 import os
 
+from flask import Flask, request, jsonify, send_from_directory
+
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return send_from_directory('.', 'index.html')
 
 @app.route('/generate-report', methods=['POST'])
 def generate_report():
@@ -35,4 +41,4 @@ def generate_report():
 
 if __name__ == '__main__':
     openai.api_key = os.getenv("OPENAI_API_KEY")
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8081)
