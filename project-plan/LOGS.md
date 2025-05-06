@@ -47,3 +47,14 @@ This file is used to document errors, issues, and their resolutions throughout t
 - **Impact**: Improved website loading speed and resource efficiency
 - **Resolution**: Implemented multiple optimization techniques
 - **Prevention**: Added monitoring and caching strategies to maintain performance 
+
+### [06/May/2024] - Mobile Menu Transition Issues
+- **Environment**: Development
+- **Description**: Menu transition animations were breaking on mobile devices, causing jerky movements and inconsistent behavior
+- **Impact**: Poor user experience on mobile devices
+- **Resolution**: Implemented smooth transitions with proper timing and transform properties:
+  1. Added will-change property for better performance
+  2. Implemented staggered animations for menu items
+  3. Added proper transition timing and easing
+  4. Fixed menu toggle button rotation
+- **Prevention**: Added proper transition classes and timing to prevent animation glitches 

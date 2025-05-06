@@ -178,6 +178,8 @@ body.offcanvas #colorlib-aside,
 #colorlib-aside {
     background: rgb(205, 201, 234);
     background: linear-gradient(180deg, rgb(229, 226, 247) 0%, rgb(241, 240, 253) 70%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    will-change: transform, opacity;
 }
 
 .author-img {
@@ -212,6 +214,44 @@ div.social-media-icons-container ul li img {
   height: 20px; /* Ensure consistent height */
   display: inline-block; /* Keep inline alignment */
   vertical-align: middle; /* Align with text or other elements */
+}
+
+/* Mobile Menu Improvements */
+@media screen and (max-width: 768px) {
+    #colorlib-aside {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    
+    body.offcanvas #colorlib-aside {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    .colorlib-nav-toggle {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .colorlib-nav-toggle.active {
+        transform: rotate(90deg);
+    }
+    
+    #colorlib-main-menu ul li {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+    body.offcanvas #colorlib-main-menu ul li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    #colorlib-main-menu ul li:nth-child(1) { transition-delay: 0.1s; }
+    #colorlib-main-menu ul li:nth-child(2) { transition-delay: 0.2s; }
+    #colorlib-main-menu ul li:nth-child(3) { transition-delay: 0.3s; }
+    #colorlib-main-menu ul li:nth-child(4) { transition-delay: 0.4s; }
+    #colorlib-main-menu ul li:nth-child(5) { transition-delay: 0.5s; }
 }
 
 /* SIDE MENU  - END */
