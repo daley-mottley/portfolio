@@ -1,5 +1,3 @@
-# Daley Mottley's Portfolio
-
 <div>
 <h1>Hi there 👋...I'm Daley Mottley </h1>
   <div  align="left">
