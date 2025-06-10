@@ -64,4 +64,11 @@ This file is used to track all tasks related to the project. Each task should be
 - **Assigned To**: Daley Mottley
 - **Notes**: Created initial project documentation and structure
 
-*Tasks will be moved here once completed with their completion date* 
+*Tasks will be moved here once completed with their completion date*
+
+### Change Placeholder Statement - [10/Jun/2025]
+- **Priority**: Medium
+- **Status**: Completed
+- **Description**: Changed the placeholder statement in the contact form textarea from "Reach out today" to "Message me today".
+- **Assigned To**: Daley Mottley
+- **Notes**: Updated js/custom.js.
