@@ -59,9 +59,9 @@ This file is used to document errors, issues, and their resolutions throughout t
   4. Fixed menu toggle button rotation
 - **Prevention**: Added proper transition classes and timing to prevent animation glitches
 
-### [06/May/2024] - Removed Placeholder Statement
+### [06/May/2024] - Updated Placeholder Message
 - **Environment**: Development
-- **Description**: Removed the statement "I'm here to make it happen" from the placeholder text in the contact form textarea in js/custom.js.
-- **Impact**: Updated placeholder text to be more concise.
+- **Description**: Updated the placeholder message in the contact form textarea in js/custom.js to "Whether you’re looking to overcome a business challenge or bring your idea to life.\n\nMessage me today, and together we’ll find the perfect solution 🤝" based on user feedback.
+- **Impact**: Updated placeholder text to be more aligned with user preference.
 - **Resolution**: Modified the originalText variable in js/custom.js.
 - **Prevention**: Documented the change in project plan files.

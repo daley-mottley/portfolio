@@ -55,12 +55,12 @@ This file is used to track all tasks related to the project. Each task should be
 - **Assigned To**: Daley Mottley
 - **Notes**: Include interactive demos where possible
 
-### Remove Placeholder Statement - [06/May/2024]
+### Update Placeholder Message - [06/May/2024]
 - **Priority**: Medium
 - **Status**: Completed
-- **Description**: Remove the statement "I'm here to make it happen" from js/custom.js.
+- **Description**: Updated the placeholder message in the contact form textarea in js/custom.js to "Whether you’re looking to overcome a business challenge or bring your idea to life.\n\nMessage me today, and together we’ll find the perfect solution 🤝".
 - **Assigned To**: Cline
-- **Notes**: Updated js/custom.js.
+- **Notes**: Updated js/custom.js based on user feedback.
 
 ## Completed Tasks
 

@@ -206,7 +206,7 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const textarea = entry.target;
-            const originalText = "Whether you’re looking to overcome a business challenge or turn your big idea into action.\n\nMessage me today, and together we’ll find the perfect solution 🤝";
+            const originalText = "Whether you’re looking to overcome a business challenge or bring your idea to life.\n\nMessage me today, and together we’ll find the perfect solution 🤝";
             const adjustedText = adjustPlaceholderText(originalText, textarea);
             textarea.placeholder = ''; // Clear the placeholder
             typeWriter(adjustedText, textarea); // Start typing animation
