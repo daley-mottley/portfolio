@@ -55,6 +55,13 @@ This file is used to track all tasks related to the project. Each task should be
 - **Assigned To**: Daley Mottley
 - **Notes**: Include interactive demos where possible
 
+### Remove Placeholder Statement - [06/May/2024]
+- **Priority**: Medium
+- **Status**: Completed
+- **Description**: Remove the statement "I'm here to make it happen" from js/custom.js.
+- **Assigned To**: Cline
+- **Notes**: Updated js/custom.js.
+
 ## Completed Tasks
 
 ### Initial Project Setup - [06/May/2024]
