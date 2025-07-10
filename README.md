@@ -7,7 +7,7 @@
     <li>- 💬 Ask me about <strong>Workflow Automations</strong></li>
      <li>- 🌱 I'm currently learning <strong>Machine Learning</strong></li>
      <li>- 📫 How to reach me:  [daley.mottley@hotmail.com]</li>
-     <li>- ✔️ Take an AI personality quiz▻  <a href="https://tinyurl.com/ai-personality-test">Click here to find out AI personality</a></li>
+     <li>- ✔️ Take an <strong>AI Personality Quiz</strong> ▻  <a href="https://tinyurl.com/ai-personality-test">Click here to find out AI personality</a></li>
     </ul>
   </div>
 </div>
