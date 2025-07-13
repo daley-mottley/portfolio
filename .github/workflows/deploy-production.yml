@@ -21,4 +21,4 @@ jobs:
           username: ${{ secrets.WEBHOST_USERNAME }} 
           password: ${{ secrets.WEBHOST_PASSWORD }}  
           local-dir: ./
-          server-dir: /daleymottley.com/htdocs/
+          server-dir: /daleymottley.com/htdocs/portfolio
