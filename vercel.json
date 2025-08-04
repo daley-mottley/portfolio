@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/quiz",
+      "destination": "https://ai-ready.daleymottley.com/quiz",
+      "permanent": true
+    },
+    {
+      "source": "/quiz/(.*)",
+      "destination": "https://ai-ready.daleymottley.com/quiz/$1",
+      "permanent": true
+    }
+  ]
+}
