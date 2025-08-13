@@ -236,22 +236,25 @@ div.social-media-icons-container ul li img {
         transform: rotate(90deg);
     }
     
-    #colorlib-main-menu ul li {
+    #colorlib-main-menu ul li,
+    .social-media-icons-container {
         opacity: 0;
         transform: translateY(10px);
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-    
-    body.offcanvas #colorlib-main-menu ul li {
+
+    body.offcanvas #colorlib-main-menu ul li,
+    body.offcanvas .social-media-icons-container {
         opacity: 1;
         transform: translateY(0);
     }
-    
+
     #colorlib-main-menu ul li:nth-child(1) { transition-delay: 0.1s; }
     #colorlib-main-menu ul li:nth-child(2) { transition-delay: 0.2s; }
     #colorlib-main-menu ul li:nth-child(3) { transition-delay: 0.3s; }
     #colorlib-main-menu ul li:nth-child(4) { transition-delay: 0.4s; }
     #colorlib-main-menu ul li:nth-child(5) { transition-delay: 0.5s; }
+    .social-media-icons-container { transition-delay: 0.6s; }
 }
 
 /* SIDE MENU  - END */
