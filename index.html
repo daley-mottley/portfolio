@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Daley Mottley | AI Consultant </title>
+	<title data-i18n="title">Daley Mottley | AI Consultant </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="I'm an AI Consultant and Full-Stack Web Developer, proudly based in the beautiful island of Barbados. I'm	passionate about crafting AI-powered solutions and dynamic web applications that elevate business	performance and efficiency" />
-	<meta name="keywords" content="artificial intelligence, web development, daley mottley, daleymottley, ai, chatbots, build a website, consultant" />
-	<meta name="author" content="Daley Mottley" />
+	<meta name="description" data-i18n="metaDescription" content="I'm an AI Consultant and Full-Stack Web Developer, proudly based in the beautiful island of Barbados. I'm	passionate about crafting AI-powered solutions and dynamic web applications that elevate business	performance and efficiency" />
+	<meta name="keywords" data-i18n="metaKeywords" content="artificial intelligence, web development, daley mottley, daleymottley, ai, chatbots, build a website, consultant" />
+	<meta name="author" data-i18n="author" content="Daley Mottley" />
 
 	<!-- Optimized font loading -->
 	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap&subset=latin" rel="stylesheet">
@@ -22,12 +22,12 @@
 	<link rel="preload" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" as="style">
 
 	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="Daley Mottley | AI Consultant" />
+	<meta property="og:title" data-i18n="ogTitle" content="Daley Mottley | AI Consultant" />
 	<meta property="og:image" content="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719909061/Portfolio/profile-pic.png" />
 	<meta property="og:url" content="https://daleymottley.com" />
 	<meta property="og:site_name" content="Daley Mottley" />
-	<meta property="og:description" content="I'm an AI Consultant and Full-Stack Web Developer, proudly based in the beautiful island of Barbados. I'm	passionate about crafting AI-powered solutions and dynamic web applications that elevate business	performance and efficiency" />
-	<meta name="twitter:title" content="Daley Mottley | AI Consultant" />
+	<meta property="og:description" data-i18n="ogDescription" content="I'm an AI Consultant and Full-Stack Web Developer, proudly based in the beautiful island of Barbados. I'm	passionate about crafting AI-powered solutions and dynamic web applications that elevate business	performance and efficiency" />
+	<meta name="twitter:title" data-i18n="twitterTitle" content="Daley Mottley | AI Consultant" />
 	<meta name="twitter:image" content="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719909061/Portfolio/profile-pic.png" />
 	<meta name="twitter:url" content="https://daleymottley.com" />
 	<meta name="twitter:card" content="" />
@@ -117,18 +117,23 @@
 						style="background-image: url(https://res.cloudinary.com/dzpafdvkm/image/upload/v1719909061/Portfolio/profile-pic.png);"
 						loading="lazy">
 					</div>
-					<h1 id="colorlib-logo"><a href="index.html">Daley Mottley</a></h1>
-					<span class="position"><a href="#">AI Consultant</a> in Barbados</span>
+					<h1 id="colorlib-logo"><a href="index.html" data-i18n="logo">Daley Mottley</a></h1>
+					<span class="position"><a href="#" data-i18n="position">AI Consultant</a> <span data-i18n="location">in Barbados</span></span>
 				</div>
 				<nav id="colorlib-main-menu" role="navigation" class="navbar">
 					<div id="navbar" class="collapse">
 						<ul>
-							<!-- <li class="active"><a href="#" data-nav-section="home">Home</a></li> -->
-							<li><a href="#" data-nav-section="about">About</a></li>
-							<li><a href="#" data-nav-section="skills">Skills</a></li>
-							<li><a href="#" data-nav-section="projects">Projects</a></li>
-							<li><a href="#" data-nav-section="services">Services</a></li>
-							<li><a href="#" data-nav-section="contact">Contact</a></li>
+							<li><a href="#" data-nav-section="about" data-i18n="nav.about">About</a></li>
+							<li><a href="#" data-nav-section="skills" data-i18n="nav.skills">Skills</a></li>
+							<li><a href="#" data-nav-section="projects" data-i18n="nav.projects">Projects</a></li>
+							<li><a href="#" data-nav-section="services" data-i18n="nav.services">Services</a></li>
+							<li><a href="#" data-nav-section="contact" data-i18n="nav.contact">Contact</a></li>
+							<li class="colorlib-language-switcher">
+								<select id="language-switcher">
+									<option value="en">English</option>
+									<option value="es">Español</option>
+								</select>
+							</li>
 						</ul>
 					</div>
 				</nav>
@@ -177,27 +182,6 @@
                 </svg>
             </a>
         </li>
-
-        <!-- Instagram Icon -->
-				<!--
-<li>
-            <a href="https://instagram.com/daleymottley" target="_blank" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.07-3.225-.149-4.771-1.664-4.919-4.919-1.266-.058-1.644-.07-4.85-.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-            </a>
-        </li>
-				-->
-				<!-- Website Icon -->
-        <!--
-				<li>
-            <a href="https://innovationseekers.com/" target="_blank" aria-label="Website">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm-1-6v-6h2v6h-2zm0-8v-2h2v2h-2z"/>
-                </svg>
-            </a>
-        </li>
-			 -->
     </ul>
 </div>
 			</aside>
@@ -214,8 +198,8 @@
 														<div class="col-md-12">
 															<div class="about-desc">
 																<span class="heading-meta animate-box"
-																	data-animate-effect="fadeInLeft">About Me</span>
-																<h2 class="colorlib-heading animate-box" data-animate-effect="fadeInLeft">
+																	data-animate-effect="fadeInLeft" data-i18n="about.heading">About Me</span>
+																<h2 class="colorlib-heading animate-box" data-animate-effect="fadeInLeft" data-i18n="about.whoAmI">
 																	Who Am I?</h2>
 
 																<div class="author-img visible-xs-block hidden-sm hidden-md hidden-lg animate-box"
@@ -224,27 +208,27 @@
 																</div>
 
 
-																<p class="animate-box" data-animate-effect="fadeInLeft">
+																<p class="animate-box" data-animate-effect="fadeInLeft" data-i18n="about.intro">
   <strong>Hi, I'm Daley Mottley</strong> — Welcome to my corner of the web! I'm an AI Consultant and Full-Stack Web Developer based in Barbados.
 </p>
 
-<p class="animate-box" data-animate-effect="fadeInLeft">
+<p class="animate-box" data-animate-effect="fadeInLeft" data-i18n="about.mission">
 My mission is to empower companies and entrepreneurs by creating custom applications and intelligent solutions that streamline operations and boost efficiency.
 </p>
 
-<p class="animate-box" data-animate-effect="fadeInLeft">
+<p class="animate-box" data-animate-effect="fadeInLeft" data-i18n="about.whatIDo">
   <strong><i>What I Do?</i></strong>  
 </p>
 
-<p class="animate-box" data-animate-effect="fadeInLeft">
+<p class="animate-box" data-animate-effect="fadeInLeft" data-i18n="about.whatIDo1">
   ✔ Develop & Deploy AI Agents – Enhance user interactions and boost efficiency with AI-powered solutions.  
 </p>
 
-<p class="animate-box" data-animate-effect="fadeInLeft">
+<p class="animate-box" data-animate-effect="fadeInLeft" data-i18n="about.whatIDo2">
   ✔ Create Custom Web Platforms – Fast, scalable, and intuitive applications tailored to your business needs.  
 </p>
 
-<p class="animate-box" data-animate-effect="fadeInLeft">
+<p class="animate-box" data-animate-effect="fadeInLeft" data-i18n="about.whatIDo3">
   ✔ Automate & Optimize – Reduce inefficiencies, save time, and scale seamlessly with intelligent automation.  
 </p>
 
@@ -265,8 +249,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 										<div class="colorlib-narrow-content">
 											<div class="row">
 												<div class="col-md-12   animate-box" data-animate-effect="fadeInLeft">
-													<span class="heading-meta">My Specialty</span>
-													<h2 class="colorlib-heading animate-box">My Skills</h2>
+													<span class="heading-meta" data-i18n="skills.specialty">My Specialty</span>
+													<h2 class="colorlib-heading animate-box" data-i18n="skills.heading">My Skills</h2>
 												</div>
 											</div>
 											<div class="row">
@@ -276,7 +260,7 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 
 
 											<div class="row">
-												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft">Programming
+												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft" data-i18n="skills.programmingLanguages">Programming
 													Languages</h3>
 												<div class="flex flex-wrap justify-center space-x-12 col-md-12">
 
@@ -284,13 +268,13 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/python-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Python</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.python">Python</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/javascript-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Javascript</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.javascript">Javascript</p>
 													</div>
 
 
@@ -298,7 +282,7 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/java-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Java</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.java">Java</p>
 													</div>
 
 
@@ -306,20 +290,20 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/php-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">PHP</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.php">PHP</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/cplusplus-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">C++</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.cplusplus">C++</p>
 													</div>
 												</div>
 
 
 											</div>
 											<div class="row">
-												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft">Backend
+												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft" data-i18n="skills.backend">Backend
 													Development</h3>
 												<div class="flex flex-wrap justify-center space-x-12 col-md-12">
 
@@ -327,34 +311,34 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/nodejs.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">NodeJS</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.nodejs">NodeJS</p>
 													</div>
 
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/firebase-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Firebase</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.firebase">Firebase</p>
 													</div>
 
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/aws-logo.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">AWS</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.aws">AWS</p>
 													</div>
 
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/mongodb-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">MongoDB</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.mongodb">MongoDB</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/airtable-logo.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">AirTable</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.airtable">AirTable</p>
 													</div>
 
 
@@ -362,7 +346,7 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/mysql-logo.png"
 															class="w100" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">MySQL</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.mysql">MySQL</p>
 													</div>
 
 
@@ -372,105 +356,98 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 											</div>
 
 											<div class="row">
-												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft">Frontend
+												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft" data-i18n="skills.frontend">Frontend
 													Development</h3>
 												<div class="flex flex-wrap justify-center space-x-12 col-md-12">
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/vuejs.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">VueJS</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.vuejs">VueJS</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/nuxtjs-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">NuxtJS</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.nuxtjs">NuxtJS</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/sass-logo.png"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Sass</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.sass">Sass</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1727666324/Portfolio/logos/figma-logo.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Figma</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.figma">Figma</p>
 													</div>
 												</div>
 
 											</div>
 
 											<div class="row">
-												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft">Content
+												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft" data-i18n="skills.cms">Content
 													Management Systems</h3>
 												<div class="flex flex-wrap justify-center space-x-12 col-md-12">
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/wordpress.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Wordpress</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.wordpress">Wordpress</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/webflow.svg"
 															class="w70" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Webflow</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.webflow">Webflow</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/drupal.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Drupal</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.drupal">Drupal</p>
 													</div>
 												</div>
 
 											</div>
 											<div class="row">
-												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft">AI Development
+												<h3 class="header-3 col-md-12 animate-box" data-animate-effect="fadeInLeft" data-i18n="skills.aiDevelopment">AI Development
 													& Automation Platforms</h3>
 												<div class="flex flex-wrap justify-center space-x-12 col-md-12">
-													<!-- <div class="flex flex-col justify-center items-center animate-box"
-														data-animate-effect="fadeInTop">
-														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/w_100/v1737634902/Innovation%20Seekers/deepseek.svg"
-															class="w90" style="margin-bottom:0;">
-
-														<p class="text-sm lg:text-base">DeepSeek</p>
-													</div> -->
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/openai-logo.png"
 															class="w90" style="margin-bottom:0;">
 
-														<p class="text-sm lg:text-base"> OpenAI</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.openai"> OpenAI</p>
 													</div>
 
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/langchain-logo.svg"
 															class="w100" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Langchain</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.langchain">Langchain</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1720600489/Portfolio/logos/voiceflow-logo.jpg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Voiceflow</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.voiceflow">Voiceflow</p>
 													</div>
 
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/botpress-logo.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Botpress</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.botpress">Botpress</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1720603511/Portfolio/logos/agentive-logo.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Agentive</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.agentive">Agentive</p>
 													</div>
 
 
@@ -479,27 +456,27 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1720602723/Portfolio/logos/make-logo.webp"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Make</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.make">Make</p>
 													</div>
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/zapier-logo.svg"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Zapier</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.zapier">Zapier</p>
 													</div>
 
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1719815960/Portfolio/logos/stack-ai-logo.svg"
 															class="w70" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Stack AI</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.stackai">Stack AI</p>
 													</div>
 
 													<div class="flex flex-col justify-center items-center animate-box"
 														data-animate-effect="fadeInTop">
 														<img src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1720602723/Portfolio/logos/vapi-ai-logo.webp"
 															class="w-[40px] lg:w-[50px] h-[40px] lg:h-[50px] m-0" style="margin-bottom:0;">
-														<p class="text-sm lg:text-base">Vapi AI</p>
+														<p class="text-sm lg:text-base" data-i18n="skills.vapi">Vapi AI</p>
 													</div>
 												</div>
 
@@ -513,20 +490,20 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 										<div class="colorlib-narrow-content">
 											<div class="row">
 												<div class="col-md-12   animate-box" data-animate-effect="fadeInLeft">
-													<span class="heading-meta">My Work</span>
-													<h2 class="colorlib-heading animate-box">Recent Work</h2>
+													<span class="heading-meta" data-i18n="work.heading">My Work</span>
+													<h2 class="colorlib-heading animate-box" data-i18n="work.subheading">Recent Work</h2>
 												</div>
 											</div>
 											<div class="row row-bottom-padded-sm animate-box">
 												<div class="col-md-12">
 													<p class="work-menu">
-														<span><a href="#" class="filter-btn active" data-filter="all">All</a></span>
-														<span><a href="#" class="filter-btn" data-filter="AI Development">AI
+														<span><a href="#" class="filter-btn active" data-filter="all" data-i18n="work.filter.all">All</a></span>
+														<span><a href="#" class="filter-btn" data-filter="AI Development" data-i18n="work.filter.ai">AI
 																Development</a></span>
-														<span><a href="#" class="filter-btn" data-filter="Web Development">Web
+														<span><a href="#" class="filter-btn" data-filter="Web Development" data-i18n="work.filter.web">Web
 																Development</a></span>
 
-														<span><a href="#" class="filter-btn" data-filter="Workflow Automation">Workflow
+														<span><a href="#" class="filter-btn" data-filter="Workflow Automation" data-i18n="work.filter.automation">Workflow
 																Automation</a></span>
 
 													</p>
@@ -539,19 +516,14 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 													<article class="cardProject cardProject--reverse"><img
 															src="https://res.cloudinary.com/dzpafdvkm/image/upload/c_scale,w_720/v1720462357/Portfolio/dental-exam.jpg">
 														<div class="cardProject__information">
-															<h3>Dental - AI Receptionist</h3>
-															<p>
+															<h3 data-i18n="work.project1.title">Dental - AI Receptionist</h3>
+															<p data-i18n="work.project1.description">
 																The Dental - AI Receptionist optimizes dental practices by automating
 																appointment
 																scheduling, offering practice information, providing basic dental advice,
 																and capturing leads. Seamlessly integrating with existing systems, it uses
 																AI and natural language processing to effectively respond to inquiries,
 																reducing staff workload and enhancing efficiency.
-
-
-
-
-
 															</p>
 															<div class="cardProject_skills">
 																<div class="cardSkill"><span>Voiceflow</span></div>
@@ -559,15 +531,6 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 																<div class="cardSkill"><span>ChatGPT</span></div>
 															</div>
 															<div class="cardProject_links">
-															<!--	<div class="cardLink"><a target="_blank"
-																		href="https://creator.voiceflow.com/prototype/657a0096e7a945cff74e73cf">View
-																		demo <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-																			viewBox="0 0 512 512" height="2rem" width="2rem"
-																			xmlns="http://www.w3.org/2000/svg">
-																			<path
-																				d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z">
-																			</path>
-																		</svg></a></div> -->
 															</div>
 														</div>
 													</article>
@@ -579,8 +542,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 													<article class="cardProject "><img
 															src="https://res.cloudinary.com/dzpafdvkm/image/upload/Portfolio/spa-compressed.jpg">
 														<div class="cardProject__information">
-															<h3>Spa & Wellness Clinic - AI Receptionist </h3>
-															<p>The Spa & Wellness Clinic - AI Receptionist is a virtual assistant designed
+															<h3 data-i18n="work.project2.title">Spa & Wellness Clinic - AI Receptionist </h3>
+															<p data-i18n="work.project2.description">The Spa & Wellness Clinic - AI Receptionist is a virtual assistant designed
 																to enhance client service and streamline operations. Utilizing advanced
 																AI,
 																it manages appointment scheduling, provides information on services, and
@@ -597,15 +560,6 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 
 															</div>
 															<div class="cardProject_links">
-															<!--	<div class="cardLink"><a target="_blank"
-																		href="https://creator.voiceflow.com/prototype/653887a24b145e00079d62fb">View
-																		demo <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-																			viewBox="0 0 512 512" height="2rem" width="2rem"
-																			xmlns="http://www.w3.org/2000/svg">
-																			<path
-																				d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z">
-																			</path>
-																		</svg></a></div> -->
 															</div>
 														</div>
 													</article>
@@ -617,8 +571,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 													<article class="cardProject "><img
 															src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1720436838/Portfolio/real-estate-compressed.png">
 														<div class="cardProject__information">
-															<h3>Real Estate - AI Assistant </h3>
-															<p>The Real Estate - AI Assistant is an advanced digital tool designed to
+															<h3 data-i18n="work.project3.title">Real Estate - AI Assistant </h3>
+															<p data-i18n="work.project3.description">The Real Estate - AI Assistant is an advanced digital tool designed to
 																streamline the property buying, selling, and management process. Using
 																cutting-edge AI, it provides instant property listings, schedules
 																viewings,
@@ -635,16 +589,6 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 
 															</div>
 															<div class="cardProject_links">
-
-																<!-- <div class="cardLink"><a target="_blank"
-																		href="https://creator.voiceflow.com/prototype/6539889031e94a00074d71a3">View
-																		demo <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-																			viewBox="0 0 512 512" height="2rem" width="2rem"
-																			xmlns="http://www.w3.org/2000/svg">
-																			<path
-																				d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z">
-																			</path>
-																		</svg></a></div> -->
 															</div>
 														</div>
 													</article>
@@ -654,8 +598,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 													<article class="cardProject cardProject--reverse"><img
 															src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1727899164/Portfolio/ai-insights-screenshot.png">
 														<div class="cardProject__information">
-															<h3>AI Insights Report Generator</h3>
-															<p>AI Insights Report Generator is a web-based application designed to provide valuable insights for your business using AI-driven analytics. The application leverages multiple data sources to deliver comprehensive reports and visualizations, helping users make data-driven decisions with ease.
+															<h3 data-i18n="work.project4.title">AI Insights Report Generator</h3>
+															<p data-i18n="work.project4.description">AI Insights Report Generator is a web-based application designed to provide valuable insights for your business using AI-driven analytics. The application leverages multiple data sources to deliver comprehensive reports and visualizations, helping users make data-driven decisions with ease.
 															</p>
 															<div class="cardProject_skills">
                      <div class="cardSkill"><span>Python</span></div>
@@ -663,15 +607,6 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 																<div class="cardSkill"><span>ChatGPT</span></div>
 															</div>
 															<div class="cardProject_links">
-                        <!-- <div class="cardLink"><a target="_blank"
-																		href="https://ai-insights-production.up.railway.app">View
-																		demo <svg stroke="currentColor" fill="currentColor" stroke-width="0"
-																			viewBox="0 0 512 512" height="2rem" width="2rem"
-																			xmlns="http://www.w3.org/2000/svg">
-																			<path
-																				d="M432,320H400a16,16,0,0,0-16,16V448H64V128H208a16,16,0,0,0,16-16V80a16,16,0,0,0-16-16H48A48,48,0,0,0,0,112V464a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V336A16,16,0,0,0,432,320ZM488,0h-128c-21.37,0-32.05,25.91-17,41l35.73,35.73L135,320.37a24,24,0,0,0,0,34L157.67,377a24,24,0,0,0,34,0L435.28,133.32,471,169c15,15,41,4.5,41-17V24A24,24,0,0,0,488,0Z">
-																			</path>
-																		</svg></a></div> -->
 															</div>
 														</div>
 
@@ -682,11 +617,11 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 													<article class="cardProject cardProject--reverse"><img
 															src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1718819208/Portfolio/web%20development/pharmaceuticals-1-compressed.jpg">
 														<div class="cardProject__information">
-															<h3>Wordpress Quotation Plugin for E-commerce</h3>
-															<p>The WordPress Quotation Plugin for e-commerce websites is designed to enhance
+															<h3 data-i18n="work.project5.title">Wordpress Quotation Plugin for E-commerce</h3>
+															<p data-i18n="work.project5.description">The WordPress Quotation Plugin for e-commerce websites is designed to enhance
 																the shopping experience by allowing visitors to easily request quotations
 																for selected products. This user-friendly plugin integrates seamlessly into
-																your WordPress e-commerce site, providing a "Add to Invoice" option for
+																your WordPress e-commerce site, providing a 'Add to Invoice' option for
 																visitors as they browse and select items. Shoppers can compile a list of
 																desired products and submit a single request for a personalized quote. The
 																plugin captures the details and sends them to your sales team for prompt
@@ -711,8 +646,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														<img
 															src="https://res.cloudinary.com/dzpafdvkm/image/upload/v1720400926/Portfolio/it-support-compressed.jpg">
 														<div class="cardProject__information">
-															<h3>Tech Company - AI Receptionist</h3>
-															<p>The Tech Company - AI Receptionist is an advanced virtual assistant
+															<h3 data-i18n="work.project6.title">Tech Company - AI Receptionist</h3>
+															<p data-i18n="work.project6.description">The Tech Company - AI Receptionist is an advanced virtual assistant
 																designed
 																to streamline front-desk operations and enhance visitor interactions.
 																Leveraging cutting-edge AI and natural language processing, appointment
@@ -733,7 +668,7 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 															</div>
 															<div class="cardProject_links">
 																<div class="cardLink"><a target="_blank"
-																		href="https://mediafiles.botpress.cloud/cf32ae64-549a-4ac2-b3e9-f3a91c5e1fe4/webchat/bot.html">View
+																		href="https://mediafiles.botpress.cloud/cf32ae64-549a-4ac2-b3e9-f3a91c5e1fe4/webchat/bot.html" data-i18n="work.project6.demo">View
 																		demo <svg stroke="currentColor" fill="currentColor" stroke-width="0"
 																			viewBox="0 0 512 512" height="2rem" width="2rem"
 																			xmlns="http://www.w3.org/2000/svg">
@@ -755,8 +690,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 
 														<div class="cardProject__information">
 
-															<h3>Whatsapp Business - AI Autoresponder</h3>
-															<p>The WhatsApp Business - AI Autoresponder enhances customer engagement by
+															<h3 data-i18n="work.project7.title">Whatsapp Business - AI Autoresponder</h3>
+															<p data-i18n="work.project7.description">The WhatsApp Business - AI Autoresponder enhances customer engagement by
 																automatically responding to inquiries in real-time. It categorizes messages,
 																generates personalized replies, and handles various queries such as product
 																details and appointment scheduling. By integrating with existing systems, it
@@ -860,32 +795,11 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 																		<path fill="rgb(0,122,255)" fill-opacity="1"
 																			d=" M78.95800018310547,-33.9900016784668 C78.95800018310547,-33.9900016784668 103.17500305175781,43.82400131225586 103.17500305175781,43.82400131225586 C103.53500366210938,44.98099899291992 103.67500305175781,46.15999984741211 103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.744998931884766,94.48400115966797 -52.275001525878906,93.4540023803711 -52.6349983215332,92.31800079345703 C-52.6349983215332,92.31800079345703 -76.84100341796875,14.536999702453613 -76.84100341796875,14.536999702453613 C-78.51100158691406,9.164999961853027 -74.7030029296875,6.060999870300293 -68.3290023803711,7.683000087738037 C-68.3290023803711,7.683000087738037 12.317000389099121,29.180999755859375 12.317000389099121,29.180999755859375 C12.317000389099121,29.180999755859375 68.06099700927734,-34.76599884033203 68.06099700927734,-34.76599884033203 C72.19999694824219,-39.37900161743164 77.26799774169922,-39.34400177001953 78.95800018310547,-33.9900016784668z M78.95800018310547,-33.9900016784668 C78.95800018310547,-33.9900016784668 103.17500305175781,43.82400131225586 103.17500305175781,43.82400131225586 C103.53500366210938,44.98099899291992 103.67500305175781,46.15999984741211 103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.744998931884766,94.48400115966797 -52.275001525878906,93.4540023803711 -52.6349983215332,92.31800079345703 C-52.6349983215332,92.31800079345703 -76.84100341796875,14.536999702453613 -76.84100341796875,14.536999702453613 C-78.51100158691406,9.164999961853027 -74.7030029296875,6.060999870300293 -68.3290023803711,7.683000087738037 C-68.3290023803711,7.683000087738037 12.317000389099121,29.180999755859375 12.317000389099121,29.180999755859375 C12.317000389099121,29.180999755859375 68.06099700927734,-34.76599884033203 68.06099700927734,-34.76599884033203 C72.19999694824219,-39.37900161743164 77.26799774169922,-39.34400177001953 78.95800018310547,-33.9900016784668z M103.572998046875,47.13399887084961 C103.42400360107422,51.39400100708008 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01300048828125 -39.904998779296875,99.01300048828125 C-44.125,100.3280029296875 -48.5880012512207,98.66699981689453 -51.11800003051758,95.21700286865234 C-51.11800003051758,95.21700286865234 5.468999862670898,25.01099967956543 5.468999862670898,25.01099967956543 C5.468999862670898,25.01099967956543 8.102999687194824,21.832000732421875 10.819999694824219,21.020000457763672 C13.536999702453613,20.20800018310547 17.107999801635742,21.540000915527344 17.107999801635742,21.540000915527344 C17.107999801635742,21.540000915527344 103.572998046875,47.13399887084961 103.572998046875,47.13399887084961z M103.572998046875,47.13399887084961 C103.42400360107422,51.39400100708008 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01300048828125 -39.904998779296875,99.01300048828125 C-44.125,100.3280029296875 -48.5880012512207,98.66699981689453 -51.11800003051758,95.21700286865234 C-51.11800003051758,95.21700286865234 5.468999862670898,25.01099967956543 5.468999862670898,25.01099967956543 C5.468999862670898,25.01099967956543 8.102999687194824,21.832000732421875 10.819999694824219,21.020000457763672 C13.536999702453613,20.20800018310547 17.107999801635742,21.540000915527344 17.107999801635742,21.540000915527344 C17.107999801635742,21.540000915527344 103.572998046875,47.13399887084961 103.572998046875,47.13399887084961z M103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.064998626708984,95.38700103759766 5.9019999504089355,26.402000427246094 5.9019999504089355,26.402000427246094 C5.9019999504089355,26.402000427246094 8.553000450134277,23.277999877929688 11.270000457763672,22.46500015258789 C13.987000465393066,21.652000427246094 17.541000366210938,22.927000045776367 17.541000366210938,22.927000045776367 C17.541000366210938,22.927000045776367 103.625,47.301998138427734 103.625,47.301998138427734z M103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.064998626708984,95.38700103759766 5.9019999504089355,26.402000427246094 5.9019999504089355,26.402000427246094 C5.9019999504089355,26.402000427246094 8.553000450134277,23.277999877929688 11.270000457763672,22.46500015258789 C13.987000465393066,21.652000427246094 17.541000366210938,22.927000045776367 17.541000366210938,22.927000045776367 C17.541000366210938,22.927000045776367 103.625,47.301998138427734 103.625,47.301998138427734z M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z">
 																		</path>
-																		<path fill="rgb(32,32,32)" fill-opacity="0.3"
-																			d=" M103.572998046875,47.13399887084961 C103.42400360107422,51.39400100708008 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01300048828125 -39.904998779296875,99.01300048828125 C-44.125,100.3280029296875 -48.5880012512207,98.66699981689453 -51.11800003051758,95.21700286865234 C-51.11800003051758,95.21700286865234 5.468999862670898,25.01099967956543 5.468999862670898,25.01099967956543 C5.468999862670898,25.01099967956543 8.102999687194824,21.832000732421875 10.819999694824219,21.020000457763672 C13.536999702453613,20.20800018310547 17.107999801635742,21.540000915527344 17.107999801635742,21.540000915527344 C17.107999801635742,21.540000915527344 103.572998046875,47.13399887084961 103.572998046875,47.13399887084961z M103.572998046875,47.13399887084961 C103.42400360107422,51.39400100708008 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01300048828125 -39.904998779296875,99.01300048828125 C-44.125,100.3280029296875 -48.5880012512207,98.66699981689453 -51.11800003051758,95.21700286865234 C-51.11800003051758,95.21700286865234 5.468999862670898,25.01099967956543 5.468999862670898,25.01099967956543 C5.468999862670898,25.01099967956543 8.102999687194824,21.832000732421875 10.819999694824219,21.020000457763672 C13.536999702453613,20.20800018310547 17.107999801635742,21.540000915527344 17.107999801635742,21.540000915527344 C17.107999801635742,21.540000915527344 103.572998046875,47.13399887084961 103.572998046875,47.13399887084961z M103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.064998626708984,95.38700103759766 5.9019999504089355,26.402000427246094 5.9019999504089355,26.402000427246094 C5.9019999504089355,26.402000427246094 8.553000450134277,23.277999877929688 11.270000457763672,22.46500015258789 C13.987000465393066,21.652000427246094 17.541000366210938,22.927000045776367 17.541000366210938,22.927000045776367 C17.541000366210938,22.927000045776367 103.625,47.301998138427734 103.625,47.301998138427734z M103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.064998626708984,95.38700103759766 5.9019999504089355,26.402000427246094 5.9019999504089355,26.402000427246094 C5.9019999504089355,26.402000427246094 8.553000450134277,23.277999877929688 11.270000457763672,22.46500015258789 C13.987000465393066,21.652000427246094 17.541000366210938,22.927000045776367 17.541000366210938,22.927000045776367 C17.541000366210938,22.927000045776367 103.625,47.301998138427734 103.625,47.301998138427734z M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z">
-																		</path>
 																		<path fill="rgb(89,151,238)" fill-opacity="1"
 																			d=" M103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.064998626708984,95.38700103759766 5.9019999504089355,26.402000427246094 5.9019999504089355,26.402000427246094 C5.9019999504089355,26.402000427246094 8.553000450134277,23.277999877929688 11.270000457763672,22.46500015258789 C13.987000465393066,21.652000427246094 17.541000366210938,22.927000045776367 17.541000366210938,22.927000045776367 C17.541000366210938,22.927000045776367 103.625,47.301998138427734 103.625,47.301998138427734z M103.625,47.301998138427734 C103.44499969482422,51.4640007019043 100.68499755859375,55.25699996948242 96.48500061035156,56.564998626708984 C96.48500061035156,56.564998626708984 -39.904998779296875,99.01399993896484 -39.904998779296875,99.01399993896484 C-44.125,100.3290023803711 -48.564998626708984,98.73899841308594 -51.064998626708984,95.38700103759766 C-51.064998626708984,95.38700103759766 5.9019999504089355,26.402000427246094 5.9019999504089355,26.402000427246094 C5.9019999504089355,26.402000427246094 8.553000450134277,23.277999877929688 11.270000457763672,22.46500015258789 C13.987000465393066,21.652000427246094 17.541000366210938,22.927000045776367 17.541000366210938,22.927000045776367 C17.541000366210938,22.927000045776367 103.625,47.301998138427734 103.625,47.301998138427734z M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z">
 																		</path>
 																		<path fill="rgb(102,162,246)" fill-opacity="0"
 																			d=" M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z M-73.9260025024414,5.758999824523926 C-73.92787170410156,5.761000156402588 -73.93099975585938,5.769000053405762 -73.93399810791016,5.77400016784668 C-73.93399810791016,5.77400016784668 -73.93399810791016,5.7769999504089355 -73.93299865722656,5.7779998779296875 C-73.93199920654297,5.78000020980835 -73.93287658691406,5.781000137329102 -73.93199920654297,5.781000137329102 C-73.93199920654297,5.781000137329102 -73.90799713134766,5.7729997634887695 -73.90799713134766,5.7729997634887695 C-73.9071273803711,5.7729997634887695 -73.90699768066406,5.7729997634887695 -73.90799713134766,5.769999980926514 C-73.90799713134766,5.769000053405762 -73.90899658203125,5.767000198364258 -73.90899658203125,5.767000198364258 C-73.91400146484375,5.763999938964844 -73.9229965209961,5.758999824523926 -73.92500305175781,5.758999824523926 C-73.92500305175781,5.758999824523926 -73.9260025024414,5.758999824523926 -73.9260025024414,5.758999824523926z">
-																		</path>
-																	</g>
-																</g>
-																<g transform="matrix(0.6459482908248901,0.17790690064430237,-0.17790690064430237,0.6459482908248901,-952.0526123046875,-321.78729248046875)"
-																	opacity="1" style="display: block;">
-																	<g opacity="1"
-																		transform="matrix(1,0,0,1,2140.425048828125,652.02099609375)">
-																		<path fill="rgb(0,0,0)" fill-opacity="0.18"
-																			d=" M-4,-52.45249938964844 C31.019433975219727,-52.45249938964844 59.45249938964844,-24.019433975219727 59.45249938964844,11 C59.45249938964844,46.01943588256836 31.019433975219727,74.45249938964844 -4,74.45249938964844 C-39.01943588256836,74.45249938964844 -67.45249938964844,46.01943588256836 -67.45249938964844,11 C-67.45249938964844,-24.019433975219727 -39.01943588256836,-52.45249938964844 -4,-52.45249938964844z">
-																		</path>
-																	</g>
-																	<g opacity="1"
-																		transform="matrix(1,0,0,1,2140.425048828125,652.02099609375)">
-																		<path fill="rgb(225,234,245)" fill-opacity="1"
-																			d=" M0,-63.45249938964844 C35.01943588256836,-63.45249938964844 63.45249938964844,-35.01943588256836 63.45249938964844,0 C63.45249938964844,35.01943588256836 35.01943588256836,63.45249938964844 0,63.45249938964844 C-35.01943588256836,63.45249938964844 -63.45249938964844,35.01943588256836 -63.45249938964844,0 C-63.45249938964844,-35.01943588256836 -35.01943588256836,-63.45249938964844 0,-63.45249938964844z M17.93600082397461,34.33000183105469 C12.602999687194824,37.12900161743164 5.40500020980835,38.59600067138672 -1.3930000066757202,38.59600067138672 C-21.2549991607666,38.59600067138672 -35.51900100708008,25.93199920654297 -35.51900100708008,3.6700000762939453 C-35.51900100708008,-21.791000366210938 -17.6560001373291,-37.7869987487793 2.740000009536743,-37.7869987487793 C23.402000427246094,-37.7869987487793 34.597999572753906,-24.323999404907227 34.597999572753906,-6.99399995803833 C34.597999572753906,8.336000442504883 27.398000717163086,15.73900032043457 21.667999267578125,15.534000396728516 C17.93600082397461,15.401000022888184 17.003000259399414,11.802000045776367 18.336000442504883,3.937000036239624 C18.336000442504883,3.937000036239624 22.334999084472656,-20.724000930786133 22.334999084472656,-20.724000930786133 C19.00200080871582,-22.59000015258789 12.336999893188477,-24.05699920654297 6.4720001220703125,-24.05699920654297 C-12.723999977111816,-24.05699920654297 -24.722000122070312,-9.260000228881836 -24.722000122070312,7.002999782562256 C-24.722000122070312,17.93400001525879 -18.45599937438965,24.332000732421875 -9.791000366210938,24.332000732421875 C-2.7260000705718994,24.332000732421875 3.2720000743865967,20.867000579833984 7.40500020980835,14.067999839782715 C7.40500020980835,14.067999839782715 7.671000003814697,14.067999839782715 7.671000003814697,14.067999839782715 C8.338000297546387,21.132999420166016 12.869999885559082,24.332000732421875 19.13599967956543,24.332000732421875 C33.53200149536133,24.332000732421875 44.4630012512207,12.067999839782715 44.4630012512207,-7.394000053405762 C44.4630012512207,-29.788999557495117 27.66699981689453,-45.91899871826172 4.205999851226807,-45.91899871826172 C-25.92099952697754,-45.91899871826172 -45.650001525878906,-22.323999404907227 -45.650001525878906,4.869999885559082 C-45.650001525878906,30.99799919128418 -26.187000274658203,46.861000061035156 -4.059999942779541,46.861000061035156 C5.40500020980835,46.861000061035156 12.336999893188477,45.6609992980957 20.334999084472656,42.0620002746582 C20.334999084472656,42.0620002746582 17.93600082397461,34.33000183105469 17.93600082397461,34.33000183105469z M6.604000091552734,-0.32899999618530273 C5.4039998054504395,7.4029998779296875 0.20600000023841858,13.668000221252441 -4.72599983215332,13.668000221252441 C-9.12399959564209,13.668000221252441 -11.390999794006348,10.468999862670898 -11.390999794006348,5.4029998779296875 C-11.390999794006348,-4.861000061035156 -4.459000110626221,-13.526000022888184 4.339000225067139,-13.526000022888184 C6.071000099182129,-13.526000022888184 7.4039998054504395,-13.260000228881836 8.470000267028809,-12.993000030517578 C8.470000267028809,-12.993000030517578 6.604000091552734,-0.32899999618530273 6.604000091552734,-0.32899999618530273z">
-																		</path>
-																		<path fill="rgb(0,122,255)" fill-opacity="1"
-																			d=" M17.93600082397461,34.33000183105469 C12.602999687194824,37.12900161743164 5.40500020980835,38.59600067138672 -1.3930000066757202,38.59600067138672 C-21.2549991607666,38.59600067138672 -35.51900100708008,25.93199920654297 -35.51900100708008,3.6700000762939453 C-35.51900100708008,-21.791000366210938 -17.6560001373291,-37.7869987487793 2.740000009536743,-37.7869987487793 C23.402000427246094,-37.7869987487793 34.597999572753906,-24.323999404907227 34.597999572753906,-6.99399995803833 C34.597999572753906,8.336000442504883 27.398000717163086,15.73900032043457 21.667999267578125,15.534000396728516 C17.93600082397461,15.401000022888184 17.003000259399414,11.802000045776367 18.336000442504883,3.937000036239624 C18.336000442504883,3.937000036239624 22.334999084472656,-20.724000930786133 22.334999084472656,-20.724000930786133 C19.00200080871582,-22.59000015258789 12.336999893188477,-24.05699920654297 6.4720001220703125,-24.05699920654297 C-12.723999977111816,-24.05699920654297 -24.722000122070312,-9.260000228881836 -24.722000122070312,7.002999782562256 C-24.722000122070312,17.93400001525879 -18.45599937438965,24.332000732421875 -9.791000366210938,24.332000732421875 C-2.7260000705718994,24.332000732421875 3.2720000743865967,20.867000579833984 7.40500020980835,14.067999839782715 C7.40500020980835,14.067999839782715 7.671000003814697,14.067999839782715 7.671000003814697,14.067999839782715 C8.338000297546387,21.132999420166016 12.869999885559082,24.332000732421875 19.13599967956543,24.332000732421875 C33.53200149536133,24.332000732421875 44.4630012512207,12.067999839782715 44.4630012512207,-7.394000053405762 C44.4630012512207,-29.788999557495117 27.66699981689453,-45.91899871826172 4.205999851226807,-45.91899871826172 C-25.92099952697754,-45.91899871826172 -45.650001525878906,-22.323999404907227 -45.650001525878906,4.869999885559082 C-45.650001525878906,30.99799919128418 -26.187000274658203,46.861000061035156 -4.059999942779541,46.861000061035156 C5.40500020980835,46.861000061035156 12.336999893188477,45.6609992980957 20.334999084472656,42.0620002746582 C20.334999084472656,42.0620002746582 17.93600082397461,34.33000183105469 17.93600082397461,34.33000183105469z M6.604000091552734,-0.32899999618530273 C5.4039998054504395,7.4029998779296875 0.20600000023841858,13.668000221252441 -4.72599983215332,13.668000221252441 C-9.12399959564209,13.668000221252441 -11.390999794006348,10.468999862670898 -11.390999794006348,5.4029998779296875 C-11.390999794006348,-4.861000061035156 -4.459000110626221,-13.526000022888184 4.339000225067139,-13.526000022888184 C6.071000099182129,-13.526000022888184 7.4039998054504395,-13.260000228881836 8.470000267028809,-12.993000030517578 C8.470000267028809,-12.993000030517578 6.604000091552734,-0.32899999618530273 6.604000091552734,-0.32899999618530273z">
 																		</path>
 																	</g>
 																</g>
@@ -946,8 +860,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 															</g>
 														</svg>
 														<div class="cardProject__information">
-															<h3>Email - AI Autoresponder</h3>
-															<p>The Email - AI Autoresponder streamlines email management by automatically
+															<h3 data-i18n="work.project8.title">Email - AI Autoresponder</h3>
+															<p data-i18n="work.project8.description">The Email - AI Autoresponder streamlines email management by automatically
 																categorizing incoming messages and drafting personalized responses based on
 																past emails. Leveraging advanced machine learning, it efficiently sorts
 																emails into appropriate categories and generates response drafts that match
@@ -965,140 +879,10 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 														</div>
 													</article>
 												</div>
-
-												<!--					<div class="card-project-container col-md-12 animate-box"
-													data-animate-effect="fadeInLeft" data-category="Web Development">
-													<article class="cardProject cardProject--reverse"><img src="">
-														<div class="cardProject__information">
-															<h3>YouTube Thumbnail Extractor </h3>
-															<p>
-															The YouTube Thumbnail Extractor is a user-friendly tool designed to extract thumbnails from YouTube videos quickly and efficiently. By simply entering the video URL, users can download high-quality thumbnails in various resolutions to suit their needs. This tool streamlines the process of obtaining video thumbnails for purposes such as social media sharing, presentations, and content creation, enhancing productivity and ease of use.
-
-
-					</p>
-															<div class="cardProject_skills">
-																<div class="cardSkill"><span>VueJS</span></div>
-																<div class="cardSkill"><span>NodeJS</span></div>
-
-															</div>
-															<div class="cardProject_links">
-
-															</div>
-														</div>
-													</article>
-												</div>
-
-												<div class="card-project-container col-md-12 animate-box"
-													data-animate-effect="fadeInLeft" data-category="Web Development">
-													<article class="cardProject cardProject--reverse"><img src="">
-														<div class="cardProject__information">
-															<h3>PDF Data Extractor </h3>
-															<p>
-															</p>
-															<div class="cardProject_skills">
-																<div class="cardSkill"><span>VueJS</span></div>
-																<div class="cardSkill"><span>NodeJS</span></div>
-
-															</div>
-															<div class="cardProject_links">
-
-															</div>
-														</div>
-													</article>
-
-
-												</div>
-
-												<div class="card-project-container col-md-12 animate-box"
-													data-animate-effect="fadeInLeft" data-category="Web Development">
-													<article class="cardProject cardProject--reverse"><img src="">
-														<div class="cardProject__information">
-															<h3>cord Bot </h3>
-															<p>
-															</p>
-															<div class="cardProject_skills">
-																<div class="cardSkill"><span>VueJS</span></div>
-																<div class="cardSkill"><span>NodeJS</span></div>
-
-															</div>
-															<div class="cardProject_links">
-
-															</div>
-														</div>
-													</article>
-
-
-												</div>
-
-												<div class="card-project-container col-md-12 animate-box"
-													data-animate-effect="fadeInLeft" data-category="Web Development">
-													<article class="cardProject cardProject--reverse"><img src="">
-														<div class="cardProject__information">
-															<h3>Email to Google Sheets </h3>
-															<p>
-															</p>
-															<div class="cardProject_skills">
-																<div class="cardSkill"><span>VueJS</span></div>
-																<div class="cardSkill"><span>NodeJS</span></div>
-
-															</div>
-															<div class="cardProject_links">
-
-															</div>
-														</div>
-													</article>
-
-
-												</div>
-
-												<div class="card-project-container col-md-12 animate-box"
-													data-animate-effect="fadeInLeft" data-category="Web Development">
-													<article class="cardProject cardProject--reverse"><img src="">
-														<div class="cardProject__information">
-															<h3>YouTube To Google Drive Uploader </h3>
-															<p>
-															The YouTube to Google Drive Uploader is an efficient application that enables users to download YouTube videos or playlists and directly upload them to their Google Drive. Leveraging the Google Drive API for seamless file uploads, this tool offers features such as Google Sign-In for secure authentication, support for downloading individual videos or entire playlists, and automatic organization of videos into a 'Youtube Videos' folder with subdirectories for playlists. This application simplifies the process of managing and storing YouTube content in Google Drive.</p>
-															<div class="cardProject_skills">
-																<div class="cardSkill"><span>VueJS</span></div>
-																<div class="cardSkill"><span>NodeJS</span></div>
-
-															</div>
-															<div class="cardProject_links">
-
-															</div>
-														</div>
-													</article>
-
-
-												</div>
-
-												<div class="card-project-container col-md-12 animate-box"
-													data-animate-effect="fadeInLeft" data-category="Web Development">
-													<article class="cardProject cardProject--reverse"><img src="">
-														<div class="cardProject__information">
-															<h3>Voice Agent </h3>
-															<p>
-															</p>
-															<div class="cardProject_skills">
-																<div class="cardSkill"><span>Vapi</span></div>
-
-															</div>
-															<div class="cardProject_links">
-
-															</div>
-														</div>
-													</article>
-
-
-												</div>
-
-					-->
-
-
 											</div>
 											<div class="row">
 												<div class="col-md-12 animate-box">
-													<p><button id="load-more" class="btn btn-primary btn-lg btn-load-more">Load more <i
+													<p><button id="load-more" class="btn btn-primary btn-lg btn-load-more" data-i18n="work.loadMore">Load more <i
 																class="icon-reload"></i></button>
 													<div id="spinner" class="spinner"></div>
 													</p>
@@ -1111,8 +895,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 										<div class="colorlib-narrow-content">
 											<div class="row">
 												<div class="col-md-12   animate-box" data-animate-effect="fadeInLeft">
-													<span class="heading-meta">What I do?</span>
-													<h2 class="colorlib-heading">Here are some of my expertise</h2>
+													<span class="heading-meta" data-i18n="services.whatIDo">What I do?</span>
+													<h2 class="colorlib-heading" data-i18n="services.heading">Here are some of my expertise</h2>
 												</div>
 											</div>
 											<div class="row row-pt-md">
@@ -1122,11 +906,9 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 															<i class="icon-bulb"></i>
 														</span>
 														<div class="desc">
-															<h3>Artificial Intelligence (AI) Consulting</h3>
-															<p>Providing strategic guidance and implementing advanced AI technologies to
+															<h3 data-i18n="services.service1.title">Artificial Intelligence (AI) Consulting</h3>
+															<p data-i18n="services.service1.description">Providing strategic guidance and implementing advanced AI technologies to
 																optimize business processes and decision-making.</p>
-
-															<!-- <a href="" class="">Book A Discovery Call</a> -->
 														</div>
 													</div>
 												</div>
@@ -1136,9 +918,9 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 															<i class="icon-user"></i>
 														</span>
 														<div class="desc">
-															<h3>AI Assistant Development
+															<h3 data-i18n="services.service2.title">AI Assistant Development
 															</h3>
-															<p>Creating intelligent AI assistants that enhance user engagement, automate
+															<p data-i18n="services.service2.description">Creating intelligent AI assistants that enhance user engagement, automate
 																interactions, and provide personalized experiences.</p>
 														</div>
 													</div>
@@ -1149,8 +931,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 															<i class="icon-world"></i>
 														</span>
 														<div class="desc">
-															<h3>Web Development</h3>
-															<p>Crafting high-quality, responsive websites designed to enhance user
+															<h3 data-i18n="services.service3.title">Web Development</h3>
+															<p data-i18n="services.service3.description">Crafting high-quality, responsive websites designed to enhance user
 																experience and support business growth.</p>
 														</div>
 													</div>
@@ -1161,9 +943,9 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 															<i class="icon-settings"></i>
 														</span>
 														<div class="desc">
-															<h3>Automated Workflow Solutions
+															<h3 data-i18n="services.service4.title">Automated Workflow Solutions
 															</h3>
-															<p>Automating workflows and boosting productivity with adaptable solutions that
+															<p data-i18n="services.service4.description">Automating workflows and boosting productivity with adaptable solutions that
 																streamline your operations.</p>
 														</div>
 													</div>
@@ -1178,8 +960,8 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 										<div class="colorlib-narrow-content">
 											<div class="row">
 												<div class="col-md-12   animate-box" data-animate-effect="fadeInLeft">
-													<span class="heading-meta">Get in Touch</span>
-													<h2 class="colorlib-heading">Contact Me</h2>
+													<span class="heading-meta" data-i18n="contact.getInTouch">Get in Touch</span>
+													<h2 class="colorlib-heading" data-i18n="contact.heading">Contact Me</h2>
 												</div>
 											</div>
 											<div class="row">
@@ -1191,30 +973,30 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 																<div class="form-group mb-4">
 																	<input type="text" name="name"
 																		class="form-control border rounded w-full py-2 px,,9-3"
-																		placeholder="Name" required>
+																		placeholder="Name" required data-i18n="contact.name" placeholder-i18n="contact.name">
 																</div>
 																<div class="form-group mb-4">
 																	<input type="email" name="email"
 																		class="form-control border rounded w-full py-2 px-3"
-																		placeholder="Email" required>
+																		placeholder="Email" required data-i18n="contact.email" placeholder-i18n="contact.email">
 																</div>
 																<div class="form-group mb-4">
 																	<input type="text" name="subject"
 																		class="form-control border rounded w-full py-2 px-3"
-																		placeholder="Subject" required>
+																		placeholder="Subject" required data-i18n="contact.subject" placeholder-i18n="contact.subject">
 																</div>
 																<div class="form-group mb-4">
 																	<div class="textarea-container">
 																		<textarea class="form-control" name="message" id="message" cols="30"
 																			rows="10"
 																			class="form-control border rounded w-full py-2 px-3 textarea"
-																			required></textarea>
+																			required data-i18n="contact.message" placeholder-i18n="contact.message"></textarea>
 																	</div>
 																</div>
 																<div class="form-group flex justify-end">
 																	<button type="submit" id="submitButton"
 																		class="btn btn-primary bg-blue-500 text-white py-2 px-4 rounded flex items-center justify-center">
-																		<span id="buttonText">Send Message</span>
+																		<span id="buttonText" data-i18n="contact.send">Send Message</span>
 																		<div id="buttonSpinner" class="spinner hidden ml-2"></div>
 																	</button>
 																</div>
@@ -1252,6 +1034,7 @@ My mission is to empower companies and entrepreneurs by creating custom applicat
 
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+	<script src="js/i18n.js"></script>
 
 	<script src="js/custom.js"></script>
 	<script src="js/preloader.js"></script>
