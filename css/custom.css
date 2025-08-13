@@ -682,8 +682,8 @@ article.cardProject {
 
 @media screen and (max-width: 768px) {
     #language-switcher-container {
-        top: 22px;
-        right: 60px;
+        top: 20px;
+        right: 75px;
         display: flex;
         align-items: center;
     }
