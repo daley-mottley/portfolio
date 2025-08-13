@@ -633,3 +633,58 @@ article.cardProject {
     resize: none;
     /* Prevent manual resizing if desired */
 }
+
+/* Language Switcher */
+#language-switcher-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+}
+
+#selected-language {
+    cursor: pointer;
+}
+
+#selected-language img {
+    width: 32px;
+    height: 24px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+#language-options {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 5px;
+}
+
+#language-options img {
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#language-options img:last-child {
+    margin-bottom: 0;
+}
+
+#language-switcher-container:hover #language-options {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    #language-switcher-container {
+        top: 22px;
+        right: 60px;
+        display: flex;
+        align-items: center;
+    }
+}

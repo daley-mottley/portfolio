@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const languageSwitcher = document.getElementById('language-switcher');
+  const languageSwitcherContainer = document.getElementById('language-switcher-container');
+  const selectedLanguage = document.getElementById('selected-language');
+  const languageOptions = document.getElementById('language-options');
 
   const getStoredLanguage = () => localStorage.getItem('language') || 'en';
   const setStoredLanguage = (lang) => localStorage.setItem('language', lang);
@@ -37,14 +39,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const translations = await fetchTranslations(lang);
       updateContent(translations);
       setStoredLanguage(lang);
-      languageSwitcher.value = lang;
+
+      // Update selected flag
+      const selectedImg = selectedLanguage.querySelector('img');
+      selectedImg.src = `https://flagcdn.com/${lang}.svg`;
+      selectedImg.alt = lang === 'en' ? 'English' : 'Español';
+
+      // Hide options
+      languageOptions.style.display = 'none';
     } catch (error) {
       console.error(error);
     }
   };
 
-  languageSwitcher.addEventListener('change', (event) => {
-    setLanguage(event.target.value);
+  selectedLanguage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    languageOptions.style.display = languageOptions.style.display === 'block' ? 'none' : 'block';
+  });
+
+  languageOptions.addEventListener('click', (event) => {
+    const target = event.target;
+    if (target.tagName === 'IMG') {
+      const lang = target.getAttribute('data-lang');
+      setLanguage(lang);
+    }
+  });
+
+  document.addEventListener('click', () => {
+    languageOptions.style.display = 'none';
   });
 
   // Set initial language
