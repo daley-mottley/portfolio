@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update selected flag
       const selectedImg = selectedLanguage.querySelector('img');
-      selectedImg.src = `https://flagcdn.com/${lang}.svg`;
+      const flag = lang === 'en' ? 'gb' : lang;
+      selectedImg.src = `https://flagcdn.com/${flag}.svg`;
       selectedImg.alt = lang === 'en' ? 'English' : 'Español';
 
       // Hide options
