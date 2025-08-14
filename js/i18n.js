@@ -3,7 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectedLanguage = document.getElementById('selected-language');
   const languageOptions = document.getElementById('language-options');
 
-  const getStoredLanguage = () => localStorage.getItem('language') || 'en';
+  const getStoredLanguage = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const langFromUrl = urlParams.get('lang');
+    return langFromUrl || localStorage.getItem('language') || 'en';
+  };
   const setStoredLanguage = (lang) => localStorage.setItem('language', lang);
 
   const fetchTranslations = async (lang) => {
@@ -36,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const setLanguage = async (lang) => {
     try {
+      document.documentElement.lang = lang;
       const translations = await fetchTranslations(lang);
       updateContent(translations);
       setStoredLanguage(lang);
