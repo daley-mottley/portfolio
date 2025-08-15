@@ -201,12 +201,34 @@ function typeWriter(text, element) {
     setTimeout(type, 1000); // 1 second delay before starting
 }
 
+// Translations for the placeholder text
+const translations = {
+    en: "Do you have a great idea on your mind or need help overcoming challenges in your business?\n\nSend me a message and I'll help you find a solution to your problem. 🙂",
+    es: "¿Tienes una gran idea en mente o necesitas ayuda para superar los desafíos en tu negocio?\n\nEnvíame un mensaje y te ayudaré a encontrar una solución a tu problema. 🙂",
+    fr: "Avez-vous une excellente idée en tête ou avez-vous besoin d'aide pour surmonter les défis de votre entreprise?\n\nEnvoyez-moi un message et je vous aiderai à trouver une solution à votre problème. 🙂",
+    de: "Haben Sie eine großartige Idee oder benötigen Sie Hilfe bei der Bewältigung von Herausforderungen in Ihrem Unternehmen?\n\nSenden Sie mir eine Nachricht und ich helfe Ihnen, eine Lösung für Ihr Problem zu finden. 🙂"
+};
+
+// Function to get the browser language
+function getBrowserLanguage() {
+    // Check for language in URL query parameter for testing
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang');
+    if (lang && translations[lang]) {
+        return lang;
+    }
+    // Use browser's language setting
+    const browserLang = navigator.language || navigator.userLanguage;
+    return browserLang.split('-')[0];
+}
+
 // Intersection Observer to trigger typewriter effect when textarea is visible
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const textarea = entry.target;
-            const originalText = "Do you have a great idea on your mind or need help overcoming challenges in your business?\n\nSend me a message and I'll help you find a solution to your problem. 🙂";
+            const lang = getBrowserLanguage();
+            const originalText = translations[lang] || translations.en;
             const adjustedText = adjustPlaceholderText(originalText, textarea);
             textarea.placeholder = ''; // Clear the placeholder
             typeWriter(adjustedText, textarea); // Start typing animation
