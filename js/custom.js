@@ -201,20 +201,46 @@ function typeWriter(text, element) {
     setTimeout(type, 1000); // 1 second delay before starting
 }
 
+// Get the stored language from URL parameters or local storage
+const getStoredLanguage = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const langFromUrl = urlParams.get('lang');
+    return langFromUrl || localStorage.getItem('language') || 'en';
+};
+
+// Fetch translations for the given language
+const fetchTranslations = async (lang) => {
+    try {
+        const response = await fetch(`locales/${lang}.json`);
+        if (!response.ok) {
+            throw new Error(`Failed to load translations for ${lang}`);
+        }
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        return {}; // Return empty object on error
+    }
+};
+
 // Intersection Observer to trigger typewriter effect when textarea is visible
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+const observer = new IntersectionObserver(async (entries) => {
+    for (const entry of entries) {
         if (entry.isIntersecting) {
             const textarea = entry.target;
-            const originalText = "Whether you’re looking to overcome a business challenge or bring your idea to life.\n\nMessage me today, and together we’ll find the perfect solution 🤝";
+            const lang = getStoredLanguage();
+            const translations = await fetchTranslations(lang);
+            const originalText = translations['contact.placeholder'] || "Whether you’re looking to overcome a business challenge or bring your idea to life.\n\nMessage me today, and together we’ll find the perfect solution 🤝";
+
             const adjustedText = adjustPlaceholderText(originalText, textarea);
             textarea.placeholder = ''; // Clear the placeholder
             typeWriter(adjustedText, textarea); // Start typing animation
             observer.unobserve(textarea); // Stop observing once the animation starts
         }
-    });
+    }
 }, { threshold: 0.5 }); // Trigger when at least 50% is visible
 
 // Start observing the textarea
 const textarea = document.getElementById('message');
-observer.observe(textarea);
+if (textarea) {
+    observer.observe(textarea);
+}
