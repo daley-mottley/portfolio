@@ -9,6 +9,26 @@
       "source": "/quiz/(.*)",
       "destination": "https://ai-ready.daleymottley.com/quiz/$1",
       "permanent": true
+    },
+    {
+      "source": "/dev",
+      "destination": "https://github.com/daley-mottley",
+      "permanent": true
+    },
+    {
+      "source": "/dev/blog",
+      "destination": "https://dev.to/daleymottley",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "https://aireadytips.substack.com",
+      "permanent": true
+    },
+    {
+      "source": "/newsletter",
+      "destination": "https://aireadytips.substack.com",
+      "permanent": true
     }
   ]
 }
