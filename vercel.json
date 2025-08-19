@@ -11,6 +11,31 @@
       "permanent": true
     },
     {
+      "source": "/tiktok",
+      "destination": "https://tiktok/daleymottley",
+      "permanent": true
+    },
+    {
+      "source": "/youtube",
+      "destination": "https://www.youtube.com/@DaleyMottley",
+      "permanent": true
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://x.com/DaleyMottley",
+      "permanent": true
+    },
+    {
+      "source": "/x",
+      "destination": "https://x.com/DaleyMottley",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/in/daleymottley",
+      "permanent": true
+    },
+    {
       "source": "/dev",
       "destination": "https://github.com/daley-mottley",
       "permanent": true
