@@ -59,6 +59,16 @@
       "source": "/newsletter",
       "destination": "https://aireadytips.substack.com",
       "permanent": true
+    },
+    {
+      "source": "/ai/blog",
+      "destination": "https://aireadytips.substack.com",
+      "permanent": true
+    },
+    {
+      "source": "/ai/newsletter",
+      "destination": "https://aireadytips.substack.com",
+      "permanent": true
     }
   ]
 }
