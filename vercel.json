@@ -16,6 +16,11 @@
       "permanent": true
     },
     {
+      "source": "/github",
+      "destination": "https://github.com/daley-mottley",
+      "permanent": true
+    },
+    {
       "source": "/dev/blog",
       "destination": "https://dev.to/daleymottley",
       "permanent": true
