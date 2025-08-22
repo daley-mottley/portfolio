@@ -66,6 +66,11 @@
       "permanent": true
     },
     {
+      "source": "/ai",
+      "destination": "https://aireadytips.substack.com",
+      "permanent": true
+    },
+    {
       "source": "/ai/tips",
       "destination": "https://aireadytips.substack.com",
       "permanent": true
