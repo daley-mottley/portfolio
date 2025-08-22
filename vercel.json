@@ -51,12 +51,22 @@
       "permanent": true
     },
     {
+      "source": "/tips",
+      "destination": "https://aireadytips.substack.com",
+      "permanent": true
+    },
+    {
       "source": "/blog",
       "destination": "https://aireadytips.substack.com",
       "permanent": true
     },
     {
       "source": "/newsletter",
+      "destination": "https://aireadytips.substack.com",
+      "permanent": true
+    },
+    {
+      "source": "/ai/tips",
       "destination": "https://aireadytips.substack.com",
       "permanent": true
     },
