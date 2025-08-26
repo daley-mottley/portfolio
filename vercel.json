@@ -12,7 +12,7 @@
     },
     {
       "source": "/tiktok",
-      "destination": "https://tiktok/daleymottley",
+      "destination": "https://www.tiktok.com/@daleymottley",
       "permanent": true
     },
     {
@@ -90,6 +90,6 @@
       "has": [{ "type": "host", "value": "ai-ready-tips.daleymottley.com" }],
       "destination": "https://aireadytips.substack.com/:path*",
       "permanent": true
-    },
+    }
   ]
 }
