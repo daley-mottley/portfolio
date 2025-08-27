@@ -84,12 +84,6 @@
       "source": "/ai/newsletter",
       "destination": "https://aireadytips.substack.com",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "ai-ready-tips.daleymottley.com" }],
-      "destination": "https://aireadytips.substack.com/:path*",
-      "permanent": true
     }
   ]
 }
