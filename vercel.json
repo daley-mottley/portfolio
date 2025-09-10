@@ -86,9 +86,9 @@
       "permanent": true
     },
     {
-  "source": "/ai/newsletter/:slug",
-  "destination": "https://aireadytips.substack.com/p/:slug",
-  "permanent": true
-   }
+      "source": "/ai/newsletter/:slug",
+      "destination": "https://aireadytips.substack.com/p/:slug",
+      "permanent": true
+    }
   ]
 }
