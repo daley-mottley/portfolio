@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const key = element.getAttribute('data-i18n');
       if (translations[key]) {
         if (element.hasAttribute('placeholder-i18n')) {
-          element.setAttribute('placeholder', translations[key]);
+          element.setAttribute('placeholder', translations[key].replace(/\\n/g, '\n'));
         } else if (element.tagName === 'META') {
             element.setAttribute('content', translations[key]);
         }
