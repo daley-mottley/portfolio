@@ -1,11 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "destination": "https://www.linkedin.com/in/daleymottley",
-      "permanent": true
-    },
-    {
       "source": "/quiz",
       "destination": "https://ai-ready.daleymottley.com/quiz",
       "permanent": true
