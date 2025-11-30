@@ -3,6 +3,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectedLanguage = document.getElementById('selected-language');
   const languageOptions = document.getElementById('language-options');
 
+  const languages = {
+    en: { name: 'English', flag: 'gb' },
+    es: { name: 'Español', flag: 'es' },
+    fr: { name: 'Français', flag: 'fr' },
+    de: { name: 'Deutsch', flag: 'de' },
+    zh: { name: '中文', flag: 'cn' },
+    ja: { name: '日本語', flag: 'jp' },
+    pt: { name: 'Português', flag: 'pt' },
+    fa: { name: 'فارسی', flag: 'ir' }
+  };
+
+  const populateLanguageOptions = () => {
+    languageOptions.innerHTML = ''; // Clear existing options
+    for (const [lang, { name, flag }] of Object.entries(languages)) {
+      const option = document.createElement('div');
+      option.classList.add('language-option-item');
+      option.setAttribute('data-lang', lang);
+
+      const img = document.createElement('img');
+      img.src = `https://flagcdn.com/${flag}.svg`;
+      img.alt = name;
+
+      const span = document.createElement('span');
+      span.textContent = name;
+
+      option.appendChild(img);
+      option.appendChild(span);
+      languageOptions.appendChild(option);
+    }
+  };
+
   const getStoredLanguage = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const langFromUrl = urlParams.get('lang');
@@ -45,11 +76,12 @@ document.addEventListener('DOMContentLoaded', () => {
       updateContent(translations);
       setStoredLanguage(lang);
 
-      // Update selected flag
-      const selectedImg = selectedLanguage.querySelector('img');
-      const flag = lang === 'en' ? 'gb' : lang;
-      selectedImg.src = `https://flagcdn.com/${flag}.svg`;
-      selectedImg.alt = lang === 'en' ? 'English' : 'Español';
+      // Update selected language display
+      const { name, flag } = languages[lang];
+      const selectedContent = selectedLanguage.querySelector('.language-option-item');
+      selectedContent.querySelector('img').src = `https://flagcdn.com/${flag}.svg`;
+      selectedContent.querySelector('img').alt = name;
+      selectedContent.querySelector('span').textContent = name;
 
       // Hide options
       languageOptions.style.display = 'none';
@@ -64,8 +96,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   languageOptions.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.tagName === 'IMG') {
+    const target = event.target.closest('.language-option-item');
+    if (target) {
       const lang = target.getAttribute('data-lang');
       setLanguage(lang);
     }
@@ -75,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     languageOptions.style.display = 'none';
   });
 
-  // Set initial language
+  // Populate language options and set initial language
+  populateLanguageOptions();
   setLanguage(getStoredLanguage());
 });
