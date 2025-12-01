@@ -1,0 +1,99 @@
+
+Console
+python -m http.server 5000 --bind 0.0.0.0
+index.html
+Configure Repl
+Configure your App
+Your code was successfully imported from GitHub. We've created a .replit file, which configures your App's behavior. Learn more about .replit files.
+
+To get started, verify our recommended platform dependencies and commands. If you're still deciding, try asking AI.
+
+Modules
+Modules combine support for programming languages, formatters, and packagers.
+Node.js
+20.19.3
+Node.js packager (npm, yarn, pnpm, bun)
+Prettier
+3.5.3
+TypeScript Language Server
+4.3.3
+Python 3.11
+3.11.13
+Python packager
+pyright-extended
+2.0.13
+TypeScript Language Server
+4.3.3
+CSS Language Server
+HTML Language Server
+Commands
+Run command
+Enter a command to run the program
+Add a run command
+Use either a dev server or start command.
+Not sure what to use or running multiple apps?
+Git
+Remote Updates
+dmotts/portfolio
+origin/more-projects•upstream
+Your GitHub connection has been deprecated. Please reconnect to continue using it.
+Commit
+There are no changes to commit.
+README.md
+Diff: index.html
+
+
+Unified
+
+Split
+There are no changes to show.
+Preview
+/
+
+Agent
+Review the contact form message input box and tell me how the placeholder animation works
+
+8 minutes ago
+Great! Now the website is multi lingual. The text is animated but instead of seeing a new line animated on the front end, I see '\n' why is that?
+
+6 minutes ago
+Yes, proceed
+
+4 minutes ago
+Start building
+4 minutes ago
+4 minutes ago
+•
+Free
+Transitioned from Plan to Build mode
+2 minutes ago
+Improve documentation to detail project architecture and dependencies
+2 minutes of work
+Ready to share? Publish this App in one click.
+Static Deployment
+Free
+Primary URL
+portfolio--dmotts
+.replit.app
+Show me the plan step by step
+
+Just now
+Here's the step-by-step breakdown of what was done to fix the newline issue:
+
+Step 1: Identify the Problem
+Issue: The typewriter animation was displaying literal \n characters instead of creating actual line breaks.
+
+Root Cause: When text comes from multilingual/translation sources (like JSON files), the \n sequences are stored as two literal characters (backslash + n) rather than being interpreted as escape sequences.
+
+Step 2: Locate the Code
+Found the relevant functions in js/custom.js:
+
+adjustPlaceholderText() - Formats the text for proper line wrapping
+typeWriter() - Animates the text character by character
+Step 3: Apply the Fix
+Added a single line at the start of adjustPlaceholderText():
+
+text = text.replace(/\\n/g, '\n');
+This converts any literal \n strings into actual newline characters before the text is processed and animated.
+
+Step 4: Verify the Fix
