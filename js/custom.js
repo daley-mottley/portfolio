@@ -161,6 +161,9 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 });
 // Function to insert spaces to adjust line breaks
 function adjustPlaceholderText(text, element) {
+    // Convert literal \n strings to actual newline characters (for multilingual text sources)
+    text = text.replace(/\\n/g, '\n');
+    
     // Calculate the number of characters that fit in one line
     const textareaWidth = element.clientWidth;
     const fontSize = parseFloat(window.getComputedStyle(element).fontSize);
