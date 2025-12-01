@@ -186,3 +186,6 @@ requiredFiles = [".replit", "replit.nix", ".config"]
 [deployment]
 deploymentTarget = "static"
 publicDir = "/"
+
+[agent]
+expertMode = true
