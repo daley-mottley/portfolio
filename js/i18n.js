@@ -77,11 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setStoredLanguage(lang);
 
       // Update selected language display
-      const { name, flag } = languages[lang];
       const selectedContent = selectedLanguage.querySelector('.language-option-item');
-      selectedContent.querySelector('img').src = `https://flagcdn.com/${flag}.svg`;
-      selectedContent.querySelector('img').alt = name;
-      selectedContent.querySelector('span').textContent = lang.toUpperCase();
+      selectedContent.innerHTML = `<img src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f310.png" alt="Globe" style="width: 1em; height: 1em; vertical-align: middle; margin-right: 0.25em;"> ${lang.toUpperCase()}`;
 
       // Hide options
       languageOptions.style.display = 'none';
