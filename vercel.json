@@ -22,6 +22,10 @@
         {
           "key": "Permissions-Policy",
           "value": "microphone=(), camera=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://us.i.posthog.com https://static.hotjar.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://res.cloudinary.com https://flagcdn.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://us.i.posthog.com https://static.hotjar.com wss://ws.hotjar.com https://formspree.io; form-action https://formspree.io; frame-src 'self';"
         }
       ]
     }
