@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update selected language display
       const selectedContent = selectedLanguage.querySelector('.language-option-item');
-      selectedContent.innerHTML = `<img src="https://twemoji.maxcdn.com/v/13.1.0/72x72/1f310.png" alt="Globe" style="width: 1em; height: 1em; vertical-align: middle; margin-right: 0.25em;"> ${lang.toUpperCase()}`;
+      selectedContent.innerHTML = `<i class="icon-world" style="vertical-align: middle; margin-right: 0.25em;"></i> ${lang.toUpperCase()}`;
 
       // Hide options
       languageOptions.style.display = 'none';
