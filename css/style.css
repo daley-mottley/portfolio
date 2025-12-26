@@ -1301,7 +1301,12 @@ body.offcanvas {
 
 .colorlib-nav-toggle {
   cursor: pointer;
-  text-decoration: none; }
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
   .colorlib-nav-toggle.active i::before, .colorlib-nav-toggle.active i::after {
     background: #000; }
   .colorlib-nav-toggle.dark.active i::before, .colorlib-nav-toggle.dark.active i::after {
