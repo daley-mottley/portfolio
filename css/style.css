@@ -1300,6 +1300,10 @@ body.offcanvas {
   height: 130px; }
 
 .colorlib-nav-toggle {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
   cursor: pointer;
   text-decoration: none; }
   .colorlib-nav-toggle.active i::before, .colorlib-nav-toggle.active i::after {
