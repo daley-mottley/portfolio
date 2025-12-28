@@ -21,39 +21,12 @@ This file is used to track all tasks related to the project. Each task should be
 - **Assigned To**: Daley Mottley
 - **Notes**: Implemented smooth transitions with proper timing and transform properties
 
-### Portfolio Website Enhancement - [06/May/2024]
-- **Priority**: High
-- **Status**: In Progress
-- **Description**: Improve portfolio website with modern design and better performance
-- **Assigned To**: Daley Mottley
-- **Notes**: Focus on AI projects showcase and workflow automation examples
-
 ### Documentation Structure Setup - [06/May/2024]
 - **Priority**: High
 - **Status**: Completed
 - **Description**: Set up project documentation structure with TASKS.md and LOGS.md
 - **Assigned To**: Daley Mottley
 - **Notes**: Created initial documentation framework
-
-### Website Performance Optimization - [06/May/2024]
-- **Priority**: Medium
-- **Status**: In Progress
-- **Description**: Optimize website loading speed and resource usage
-- **Assigned To**: Daley Mottley
-- **Notes**: Implementing the following optimizations:
-  1. Image optimization and lazy loading
-  2. CSS and JavaScript minification
-  3. Resource preloading and caching
-  4. Font optimization
-  5. Third-party script optimization
-  6. Performance monitoring setup
-
-### AI Projects Showcase - [06/May/2024]
-- **Priority**: High
-- **Status**: Not Started
-- **Description**: Create dedicated section for AI projects and machine learning work
-- **Assigned To**: Daley Mottley
-- **Notes**: Include interactive demos where possible
 
 ### Update Placeholder Message - [06/May/2024]
 - **Priority**: Medium
@@ -72,6 +45,26 @@ This file is used to track all tasks related to the project. Each task should be
 - **Notes**: Created initial project documentation and structure
 
 *Tasks will be moved here once completed with their completion date*
+
+### Portfolio Website Enhancement - [06/May/2024]
+- **Priority**: High
+- **Status**: Completed
+- **Description**: Improve portfolio website with modern design and better performance
+- **Assigned To**: Daley Mottley
+- **Notes**: Focus on AI projects showcase and workflow automation examples
+
+### Website Performance Optimization - [06/May/2024]
+- **Priority**: Medium
+- **Status**: Completed
+- **Description**: Optimize website loading speed and resource usage
+- **Assigned To**: Daley Mottley
+- **Notes**: Implementing the following optimizations:
+  1. Image optimization and lazy loading
+  2. CSS and JavaScript minification
+  3. Resource preloading and caching
+  4. Font optimization
+  5. Third-party script optimization
+  6. Performance monitoring setup
 
 ### Change Placeholder Statement - [10/Jun/2025]
 - **Priority**: Medium
