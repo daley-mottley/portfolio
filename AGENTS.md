@@ -1,4 +1,4 @@
-# 🧠 AGENT.md — Project Instruction Guardrails
+# 🧠 AGENTS.md — Project Instruction Guardrails
 
 ## ❗ Mandatory Startup Procedure (Read Before Acting)
 
