@@ -53,3 +53,41 @@
 These are reference commands — adapt based on agent tooling:
 
 - Read main project plan:
+
+```
+read_file("project-plan/README.md")
+```
+for file in list_files("project-plan/", extension=".md"): read_file(file)
+
+### 🧰 Project Boundaries
+- Always list the files you *plan* to change before generating patches.
+- Show diffs instead of absolute changes when presenting modifications.
+
+---
+
+## ⚠️ Safety and Guardrails
+
+### ❌ Forbidden Without Approval
+- Committing secrets or API keys.
+- Deleting folders or rewriting history.
+- Deploying to live environments.
+
+### 📣 When Stuck
+- If instructions are unclear, ask:
+> “I need clarification before I can proceed safely.”
+
+- Avoid speculative planning.
+
+---
+
+## 🧩 Notes to AI Agents
+
+- Treat this file as **machine instructions**, not human documentation.
+- Explicitly follow **sequence**:  
+1️⃣ `project-plan/README.md` →  
+2️⃣ *All other `.md`s in `project-plan/` →  
+3️⃣ Plan →  
+4️⃣ Request approval →  
+5️⃣ Execute.
+
+
