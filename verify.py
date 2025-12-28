@@ -12,7 +12,7 @@ async def main():
         # Take a screenshot of the social media icons container
         element = await page.query_selector(".social-media-icons-container")
         if element:
-            await element.screenshot(path="social_icons.png")
+            await element.screenshot(path="/tmp/social_icons.png")
         else:
             print("Social media icons container not found.")
 
