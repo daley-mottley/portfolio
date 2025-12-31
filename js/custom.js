@@ -85,21 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
         spinner.style.display = 'block'; // Show spinner
         loadMoreButton.style.display = 'none'; // Hide Load More button
 
-        setTimeout(() => {
-            spinner.style.display = 'none'; // Hide spinner after loading
-            let visibleCount = 0;
+        spinner.style.display = 'none'; // Hide spinner after loading
+        let visibleCount = 0;
 
-            filteredItems.forEach((item, index) => {
-                if (index < visibleItemsCount + itemsPerLoad && index >= visibleItemsCount) {
-                    item.style.display = 'block';
-                    item.classList.add('fadeIn');
-                    visibleCount++;
-                }
-            });
+        filteredItems.forEach((item, index) => {
+            if (index < visibleItemsCount + itemsPerLoad && index >= visibleItemsCount) {
+                item.style.display = 'block';
+                item.classList.add('fadeIn');
+                visibleCount++;
+            }
+        });
 
-            visibleItemsCount += itemsPerLoad;
-            updateLoadMoreButton(visibleCount);
-        }, 500); // Simulate loading delay
+        visibleItemsCount += itemsPerLoad;
+        updateLoadMoreButton(visibleCount);
     });
 
     // Initialize the view with the initial set of items
