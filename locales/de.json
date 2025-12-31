@@ -101,10 +101,10 @@
   "services.service4.description": "Automatisierung von Workflows und Steigerung der Produktivität mit anpassungsfähigen Lösungen, die Ihre Abläufe rationalisieren.",
   "contact.getInTouch": "Kontakt aufnehmen",
   "contact.heading": "Kontaktieren Sie mich",
-  "contact.name": "Name",
-  "contact.email": "E-Mail",
-  "contact.subject": "Betreff",
-  "contact.message": "Nachricht",
+  "contact.name": "Name*",
+  "contact.email": "E-Mail*",
+  "contact.subject": "Betreff*",
+  "contact.message": "Nachricht*",
   "contact.placeholder": "Ob Sie eine geschäftliche Herausforderung meistern oder Ihre Idee zum Leben erwecken möchten.\\n\\nSchreiben Sie mir noch heute eine Nachricht, und gemeinsam finden wir die perfekte Lösung 🤝",
   "contact.send": "Nachricht senden"
 }

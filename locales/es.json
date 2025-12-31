@@ -101,10 +101,10 @@
   "services.service4.description": "Automatización de flujos de trabajo y aumento de la productividad con soluciones adaptables que agilizan sus operaciones.",
   "contact.getInTouch": "Ponerse en contacto",
   "contact.heading": "Contáctame",
-  "contact.name": "Nombre",
-  "contact.email": "Correo electrónico",
-  "contact.subject": "Asunto",
-  "contact.message": "Mensaje",
+  "contact.name": "Nombre*",
+  "contact.email": "Correo electrónico*",
+  "contact.subject": "Asunto*",
+  "contact.message": "Mensaje*",
   "contact.placeholder": "Ya sea que busques superar un desafío empresarial o dar vida a tu idea.\\n\\nMensajéame hoy y juntos encontraremos la solución perfecta 🤝",
   "contact.send": "Enviar mensaje"
 }

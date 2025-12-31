@@ -101,10 +101,10 @@
   "services.service4.description": "業務を合理化する適応性のあるソリューションでワークフローを自動化し、生産性を向上させます。",
   "contact.getInTouch": "お問い合わせ",
   "contact.heading": "私に連絡して",
-  "contact.name": "名前",
-  "contact.email": "Eメール",
-  "contact.subject": "件名",
-  "contact.message": "メッセージ",
+  "contact.name": "名前*",
+  "contact.email": "Eメール*",
+  "contact.subject": "件名*",
+  "contact.message": "メッセージ*",
   "contact.placeholder": "ビジネス上の課題を克服しようとしている場合でも、アイデアを実現しようとしている場合でも。\\n\\n今日私にメッセージを送ってください。一緒に完璧な解決策を見つけましょう🤝",
   "contact.send": "メッセージを送信"
 }
