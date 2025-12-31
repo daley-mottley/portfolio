@@ -690,3 +690,12 @@ article.cardProject {
         align-items: center;
     }
 }
+
+/* CONTACT FORM LABELS */
+#contactForm .form-group label {
+    font-weight: bold;
+}
+
+.required-indicator {
+    color: red;
+}
