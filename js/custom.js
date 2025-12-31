@@ -85,21 +85,22 @@ document.addEventListener('DOMContentLoaded', () => {
         spinner.style.display = 'block'; // Show spinner
         loadMoreButton.style.display = 'none'; // Hide Load More button
 
-        setTimeout(() => {
-            spinner.style.display = 'none'; // Hide spinner after loading
-            let visibleCount = 0;
+        // The 500ms timeout was removed to improve performance.
+        // The button now loads new items instantly.
+        filteredItems.forEach((item, index) => {
+            if (index < visibleItemsCount + itemsPerLoad && index >= visibleItemsCount) {
+                item.style.display = 'block';
+                item.classList.add('fadeIn');
+            }
+        });
 
-            filteredItems.forEach((item, index) => {
-                if (index < visibleItemsCount + itemsPerLoad && index >= visibleItemsCount) {
-                    item.style.display = 'block';
-                    item.classList.add('fadeIn');
-                    visibleCount++;
-                }
-            });
+        visibleItemsCount += itemsPerLoad;
 
-            visibleItemsCount += itemsPerLoad;
-            updateLoadMoreButton(visibleCount);
-        }, 500); // Simulate loading delay
+        spinner.style.display = 'none'; // Hide spinner after loading
+
+        // Update the button's visibility based on the total number of visible items.
+        // This also fixes a bug where the button logic was using an incorrect count.
+        updateLoadMoreButton(visibleItemsCount);
     });
 
     // Initialize the view with the initial set of items
