@@ -36,8 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle the filter button click event
     filterButtons.forEach(button => {
-        button.addEventListener('click', event => {
-            event.preventDefault();
+        button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
 
             // Remove 'active' class from all filter buttons
