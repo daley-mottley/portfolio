@@ -81,10 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        spinner.style.display = 'block'; // Show spinner
         loadMoreButton.style.display = 'none'; // Hide Load More button
-
-        spinner.style.display = 'none'; // Hide spinner after loading
         let visibleCount = 0;
 
         filteredItems.forEach((item, index) => {
