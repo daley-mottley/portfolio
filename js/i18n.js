@@ -76,6 +76,10 @@ document.addEventListener('DOMContentLoaded', () => {
       updateContent(translations);
       setStoredLanguage(lang);
 
+      // Dispatch a custom event to notify other scripts of the language change
+      const event = new CustomEvent('languageChanged', { detail: { language: lang } });
+      document.dispatchEvent(event);
+
       // Update selected language display
       const selectedContent = selectedLanguage.querySelector('.language-option-item');
       selectedContent.innerHTML = `<i class="icon-world" style="vertical-align: middle; margin-right: 0.25em;"></i> ${lang.toUpperCase()}`;
