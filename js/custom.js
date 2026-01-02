@@ -185,17 +185,22 @@ function adjustPlaceholderText(text, element) {
     return adjustedText;
 }
 
+let typewriterTimeout; // Variable to hold the timeout
+
 // Typewriter effect for placeholder text
 function typeWriter(text, element) {
+    clearTimeout(typewriterTimeout); // Clear any existing animation
     let index = 0;
+    element.placeholder = ''; // Reset placeholder
+
     function type() {
         if (index < text.length) {
             element.placeholder += text.charAt(index);
             index++;
-            setTimeout(type, 50);
+            typewriterTimeout = setTimeout(type, 50);
         }
     }
-    setTimeout(type, 1000); // 1 second delay before starting
+    typewriterTimeout = setTimeout(type, 1000); // 1-second delay before starting
 }
 
 // Get the stored language from URL parameters or local storage
@@ -219,22 +224,33 @@ const fetchTranslations = async (lang) => {
     }
 };
 
+// Function to initialize and start the typewriter animation
+const startTypewriterAnimation = async () => {
+    const textarea = document.getElementById('message');
+    if (!textarea) return;
+
+    const lang = getStoredLanguage();
+    const translations = await fetchTranslations(lang);
+    const originalText = translations['contact.placeholder'] || "Whether you’re looking to overcome a business challenge or bring your idea to life.\\n\\nMessage me today, and together we’ll find the perfect solution 🤝";
+
+    const adjustedText = adjustPlaceholderText(originalText, textarea);
+    typeWriter(adjustedText, textarea); // Start typing animation
+};
+
 // Intersection Observer to trigger typewriter effect when textarea is visible
-const observer = new IntersectionObserver(async (entries) => {
+const observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
         if (entry.isIntersecting) {
-            const textarea = entry.target;
-            const lang = getStoredLanguage();
-            const translations = await fetchTranslations(lang);
-            const originalText = translations['contact.placeholder'] || "Whether you’re looking to overcome a business challenge or bring your idea to life.\n\nMessage me today, and together we’ll find the perfect solution 🤝";
-
-            const adjustedText = adjustPlaceholderText(originalText, textarea);
-            textarea.placeholder = ''; // Clear the placeholder
-            typeWriter(adjustedText, textarea); // Start typing animation
-            observer.unobserve(textarea); // Stop observing once the animation starts
+            startTypewriterAnimation();
+            observer.unobserve(entry.target); // Stop observing once triggered
         }
     }
 }, { threshold: 0.5 }); // Trigger when at least 50% is visible
+
+// Listen for the custom event to re-trigger the animation on language change
+document.addEventListener('languageChanged', () => {
+    startTypewriterAnimation();
+});
 
 // Start observing the textarea
 const textarea = document.getElementById('message');
