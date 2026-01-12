@@ -128,17 +128,21 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         document.getElementById('submitButton').disabled = false;
 
         // Handle the placeholder message display
-        let messageTextarea = document.getElementById('message');
+        let feedbackElement = document.getElementById('form-feedback');
         if (response.ok) {
-            messageTextarea.placeholder = 'Your message has been sent successfully!';
+            feedbackElement.textContent = 'Your message has been sent successfully!';
+            feedbackElement.classList.add('success');
+            feedbackElement.classList.remove('error');
             document.getElementById('contactForm').reset();
         } else {
             response.json().then(data => {
                 if (data.errors) {
-                    messageTextarea.placeholder = data.errors.map(error => error.message).join('\n');
+                    feedbackElement.textContent = data.errors.map(error => error.message).join('\n');
                 } else {
-                    messageTextarea.placeholder = 'Oops! Something went wrong. Please try again later.';
+                    feedbackElement.textContent = 'Oops! Something went wrong. Please try again later.';
                 }
+                feedbackElement.classList.add('error');
+                feedbackElement.classList.remove('success');
             });
         }
     })
@@ -148,9 +152,11 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         document.getElementById('buttonText').classList.remove('hidden');
         document.getElementById('submitButton').disabled = false;
 
-        // Display error message in the placeholder
-        let messageTextarea = document.getElementById('message');
-        messageTextarea.placeholder = 'Oops! There was a problem submitting your form. Please try again.';
+        // Display error message in the feedback element
+        let feedbackElement = document.getElementById('form-feedback');
+        feedbackElement.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+        feedbackElement.classList.add('error');
+        feedbackElement.classList.remove('success');
     });
 });
 // Function to insert spaces to adjust line breaks
