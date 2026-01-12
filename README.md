@@ -12,3 +12,11 @@
     </ul>
   </div>
 </div>
+
+### Building CSS
+
+To improve performance, the CSS files are bundled into a single file, `css/bundle.css`. If you make changes to any of the source CSS files in the `css/` directory, you must regenerate the bundle by running the following command:
+
+```bash
+./scripts/build-css.sh
+```
