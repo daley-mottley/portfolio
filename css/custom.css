@@ -690,3 +690,11 @@ article.cardProject {
         align-items: center;
     }
 }
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
