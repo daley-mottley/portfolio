@@ -682,6 +682,24 @@ article.cardProject {
 		min-width: 150px;
 }
 
+.language-switcher-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    text-align: left;
+    color: inherit;
+}
+
+.language-switcher-button:focus {
+    outline: 2px solid #2c98f0; /* Example focus style */
+    outline-offset: 2px;
+}
+
+
 @media screen and (max-width: 768px) {
     #language-switcher-container {
         top: 20px;
