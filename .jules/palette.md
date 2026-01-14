@@ -1,0 +1,3 @@
+## 2024-10-27 - Dynamic ARIA attributes are critical for accessibility
+**Learning:** For interactive UI components that show and hide content, such as dropdown menus or accordions, it is not sufficient to simply add ARIA attributes like `aria-expanded` to the initial HTML. To be truly accessible, these attributes must be dynamically updated with JavaScript to reflect the component's state (e.g., toggling `aria-expanded` between `true` and `false`). Without this, screen readers will provide incorrect information to users.
+**Action:** Always write or modify the necessary JavaScript to keep ARIA attributes in sync with the UI's state when implementing accessible interactive components.
