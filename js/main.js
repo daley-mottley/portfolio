@@ -290,6 +290,26 @@
 		})
 	};
 
+	var backToTop = function() {
+		// Show/hide the button based on scroll position
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 300) {
+				$('.back-to-top').addClass('visible');
+			} else {
+				$('.back-to-top').removeClass('visible');
+			}
+		});
+
+		// Smooth scroll to top when the button is clicked
+		$('.back-to-top').click(function(event) {
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop: 0
+			}, 500, 'easeInOutExpo');
+			return false;
+		});
+	};
+
 	// Document on load.
 	$(function(){
 		fullHeight();
@@ -308,6 +328,7 @@
 		sliderMain();
 		stickyFunction();
 		owlCrouselFeatureSlide();
+		backToTop();
 	});
 
 
