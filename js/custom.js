@@ -24,10 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Update the visibility of the Load More button
-    function updateLoadMoreButton(visibleCount) {
+    function updateLoadMoreButton(count) {
         const filter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
         const filteredItems = Array.from(projectItems).filter(item => filter === 'all' || item.getAttribute('data-category') === filter);
-        if (visibleCount < filteredItems.length) {
+        if (count < filteredItems.length) {
             loadMoreButton.style.display = 'inline-block';
         } else {
             loadMoreButton.style.display = 'none';
@@ -72,28 +72,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle the Load More button click event
     loadMoreButton.addEventListener('click', () => {
-        const filter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-        const filteredItems = Array.from(projectItems).filter(item => filter === 'all' || item.getAttribute('data-category') === filter);
+        // Show spinner and disable button for better UX
+        spinner.style.display = 'inline-block';
+        loadMoreButton.disabled = true;
+        loadMoreButton.setAttribute('aria-busy', 'true');
 
-        // Check if there are more items to load
-        if (visibleItemsCount >= filteredItems.length) {
-            loadMoreButton.style.display = 'none'; // No more items to load
-            return;
-        }
+        // Simulate a delay to show loading state
+        setTimeout(() => {
+            const filter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            const filteredItems = Array.from(projectItems).filter(item => filter === 'all' || item.getAttribute('data-category') === filter);
 
-        loadMoreButton.style.display = 'none'; // Hide Load More button
-        let visibleCount = 0;
+            const currentlyVisibleItems = filteredItems.filter(item => item.style.display === 'block').length;
+            let newVisibleCount = 0;
 
-        filteredItems.forEach((item, index) => {
-            if (index < visibleItemsCount + itemsPerLoad && index >= visibleItemsCount) {
-                item.style.display = 'block';
-                item.classList.add('fadeIn');
-                visibleCount++;
+            for (let i = currentlyVisibleItems; i < currentlyVisibleItems + itemsPerLoad && i < filteredItems.length; i++) {
+                filteredItems[i].style.display = 'block';
+                filteredItems[i].classList.add('fadeIn');
+                newVisibleCount++;
             }
-        });
 
-        visibleItemsCount += itemsPerLoad;
-        updateLoadMoreButton(visibleCount);
+            // Hide spinner and re-enable button
+            spinner.style.display = 'none';
+            loadMoreButton.disabled = false;
+            loadMoreButton.removeAttribute('aria-busy');
+
+            visibleItemsCount = currentlyVisibleItems + newVisibleCount;
+            updateLoadMoreButton(visibleItemsCount);
+        }, 500); // 500ms delay
     });
 
     // Initialize the view with the initial set of items
