@@ -12,3 +12,15 @@
     </ul>
   </div>
 </div>
+
+## Building for Production
+
+This site uses bundled CSS and JavaScript to improve performance. To generate these bundles, run the following commands from the root of the repository:
+
+```bash
+# To bundle CSS files
+./scripts/build-css.sh
+
+# To bundle JavaScript files
+./scripts/build-js.sh
+```
