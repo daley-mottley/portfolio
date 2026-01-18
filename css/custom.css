@@ -199,14 +199,14 @@ div.social-media-icons-container ul li a {
   display: inline-flex; /* Ensures the anchor behaves like a flex container */
   align-items: center; /* Align icon inside anchor */
   justify-content: center; /* Center the icon inside anchor */
- /* font-size: inherit; */ /* Adjust icon size */
   text-decoration: none; /* Remove underline */
   color: inherit; /* Use the inherited text color */
-  transition: color 0.3s ease; /* Add smooth hover effect */
+  transition: all 0.3s ease; /* Add smooth hover effect for all properties */
 }
 
 div.social-media-icons-container ul li a:hover {
   color: #0073e6; /* Change color on hover */
+  transform: translateY(-3px); /* Add a subtle "lift" effect */
 }
 
 div.social-media-icons-container ul li img {
