@@ -1,5 +1,6 @@
-## 2024-07-25 - Animations Can Break Screenshot Verification
+## BOLT'S JOURNAL - CRITICAL LEARNINGS ONLY
+Format: ## YYYY-MM-DD - [Title] **Learning:** [Insight] **Action:** [How to apply next time]
 
-**Learning:** CSS-based fade-in animations, like those triggered by Waypoints.js in this project, can interfere with automated screenshot capture tools like Playwright. The screenshot may be taken before the animation completes, resulting in a blank or partially rendered image. This can cause a valid code change to fail verification.
-
-**Action:** When verifying changes on a page with scroll-triggered animations, update the verification script to temporarily disable the animations before capturing the screenshot. This can be done by injecting JavaScript to remove the animation-triggering classes (e.g., `.animate-box`) from the relevant elements. This ensures the screenshot accurately reflects the final rendered state of the UI, not an intermediate animation state.
+## 2024-10-27 - Script Combination Failure
+**Learning:** Combining JavaScript files without a clear understanding of their dependencies and execution order can break critical functionality. In this case, the site's preloader script (`preloader.js`) failed to hide because it was combined with other scripts it likely needed to precede, causing a timeout in verification.
+**Action:** Before combining scripts, analyze their dependencies. Prioritize less disruptive optimizations. If combining scripts, ensure the execution order is preserved, especially for initialization and UI-blocking scripts like preloaders.
