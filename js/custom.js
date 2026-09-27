@@ -155,34 +155,33 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 });
 // Function to insert spaces to adjust line breaks
 function adjustPlaceholderText(text, element) {
-    // Convert literal \n strings to actual newline characters
-    text = text.replace(/\\n/g, '\n');
-    
-    // Calculate the number of characters that fit in one line
+    // Convert literal \\n strings to actual newline characters
+    text = text.replace(/\\\\n/g, '\\n');
+
+    // Preserve intentional line breaks. Only wrap lines that exceed the width.
     const textareaWidth = element.clientWidth;
     const fontSize = parseFloat(window.getComputedStyle(element).fontSize);
-    const charWidth = fontSize * 0.55; // Refined approximate character width
+    const charWidth = fontSize * 0.55;
     const charsPerLine = Math.floor(textareaWidth / charWidth);
 
-    // Split the text into lines based on double newline as paragraph separator
-    const lines = text.split('\n\n');
-    const adjustedText = lines.map(line => {
-        // Handle word wrapping more accurately
-        let lineWithSpaces = '';
+    return text.split('\\n').map(line => {
+        if (!line.trim()) return '';
+        if (line.length <= charsPerLine) return line.trim();
+
+        let result = '';
         let lineLength = 0;
-        const words = line.split(' ');
-        words.forEach(word => {
-            if (lineLength + word.length >= charsPerLine) {
-                lineWithSpaces += '\n';
+        line.split(' ').forEach(word => {
+            if (lineLength > 0 && lineLength + word.length >= charsPerLine) {
+                result += '\\n';
                 lineLength = 0;
+            } else if (lineLength > 0) {
+                result += ' ';
             }
-            lineWithSpaces += word + ' ';
+            result += word;
             lineLength += word.length + 1;
         });
-        return lineWithSpaces.trim();
-    }).join('\n\n');
-
-    return adjustedText;
+        return result.trim();
+    }).join('\\n');
 }
 
 let typewriterTimeout; // Variable to hold the timeout
