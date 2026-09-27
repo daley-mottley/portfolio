@@ -155,24 +155,24 @@ document.getElementById('contactForm').addEventListener('submit', function(event
 });
 // Function to insert spaces to adjust line breaks
 function adjustPlaceholderText(text, element) {
-    // Convert literal \\n strings to actual newline characters
-    text = text.replace(/\\\\n/g, '\\n');
+    // Convert literal \n strings to actual newline characters and non-breaking spaces to standard spaces
+    text = text.replace(/\\n/g, '\n').replace(/\u00a0/g, ' ');
 
     // Preserve intentional line breaks. Only wrap lines that exceed the width.
-    const textareaWidth = element.clientWidth;
-    const fontSize = parseFloat(window.getComputedStyle(element).fontSize);
+    const textareaWidth = element ? element.clientWidth : 0;
+    const fontSize = element ? parseFloat(window.getComputedStyle(element).fontSize) || 16 : 16;
     const charWidth = fontSize * 0.55;
-    const charsPerLine = Math.floor(textareaWidth / charWidth);
+    const charsPerLine = textareaWidth ? Math.floor(textareaWidth / charWidth) : 40;
 
-    return text.split('\\n').map(line => {
+    return text.split('\n').map(line => {
         if (!line.trim()) return '';
-        if (line.length <= charsPerLine) return line.trim();
+        if (charsPerLine > 0 && line.length <= charsPerLine) return line.trim();
 
         let result = '';
         let lineLength = 0;
         line.split(' ').forEach(word => {
-            if (lineLength > 0 && lineLength + word.length >= charsPerLine) {
-                result += '\\n';
+            if (lineLength > 0 && charsPerLine > 0 && lineLength + word.length >= charsPerLine) {
+                result += '\n';
                 lineLength = 0;
             } else if (lineLength > 0) {
                 result += ' ';
@@ -181,7 +181,7 @@ function adjustPlaceholderText(text, element) {
             lineLength += word.length + 1;
         });
         return result.trim();
-    }).join('\\n');
+    }).join('\n');
 }
 
 let typewriterTimeout; // Variable to hold the timeout
@@ -230,7 +230,7 @@ const startTypewriterAnimation = async () => {
 
     const lang = getStoredLanguage();
     const translations = await fetchTranslations(lang);
-    const originalText = translations['contact.placeholder'] || "Whether you’re looking to overcome a business challenge or bring your idea to life.\\n\\nMessage me today, and together we’ll find the perfect solution 🤝";
+    const originalText = translations['contact.placeholder'] || "Need help overcoming a challenge or bringing your idea to life?\n\nLet’s schedule a call.\n\nMessage me today, and together we’ll find the perfect solution 🤝";
 
     const adjustedText = adjustPlaceholderText(originalText, textarea);
     typeWriter(adjustedText, textarea); // Start typing animation
