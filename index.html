@@ -84,15 +84,15 @@
 
 <body>
 	<div id="language-switcher-container">
-		<div id="selected-language">
+		<button id="selected-language" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
 			<div class="language-option-item">
 				<img loading="lazy" src="https://flagcdn.com/gb.svg" alt="English">
 				<span>English</span>
 			</div>
-		</div>
-		<div id="language-options">
+		</button>
+		<ul id="language-options" role="listbox">
 			<!-- Language options will be populated by i18n.js -->
-		</div>
+		</ul>
 	</div>
 	<div id="loader-wrapper">
 		<div id="loader"></div>
