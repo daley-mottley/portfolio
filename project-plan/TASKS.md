@@ -72,3 +72,10 @@ This file is used to track all tasks related to the project. Each task should be
 - **Description**: Changed the placeholder statement in the contact form textarea from "Reach out today" to "Message me today".
 - **Assigned To**: Daley Mottley
 - **Notes**: Updated js/custom.js.
+
+### Website Performance & Asset Audit - [04/Feb/2025]
+- **Priority**: High
+- **Status**: Completed
+- **Description**: Audit and optimize web assets, font loading, and resource hints.
+- **Assigned To**: Bolt
+- **Notes**: Consolidated fonts to v2 API, added resource hints, preloaded LCP asset, and fixed 404s/typos.
