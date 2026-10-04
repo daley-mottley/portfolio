@@ -3,123 +3,33 @@
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "microphone=(), camera=()"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://us.i.posthog.com https://static.hotjar.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://res.cloudinary.com https://flagcdn.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://us.i.posthog.com https://static.hotjar.com wss://ws.hotjar.com https://formspree.io; form-action https://formspree.io; frame-src 'self';"
-        }
+        {"key": "X-Content-Type-Options", "value": "nosniff"},
+        {"key": "X-Frame-Options", "value": "DENY"},
+        {"key": "X-XSS-Protection", "value": "1; mode=block"},
+        {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
+        {"key": "Permissions-Policy", "value": "microphone=(), camera=()"},
+        {"key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://us.i.posthog.com https://static.hotjar.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://res.cloudinary.com https://flagcdn.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://us.i.posthog.com https://static.hotjar.com wss://ws.hotjar.com https://formspree.io; form-action https://formspree.io; frame-src 'self';"}
       ]
     }
   ],
   "redirects": [
-    {
-      "source": "/quiz",
-      "destination": "https://ai-ready.daleymottley.com/quiz",
-      "permanent": true
-    },
-    {
-      "source": "/quiz/(.*)",
-      "destination": "https://ai-ready.daleymottley.com/quiz/$1",
-      "permanent": true
-    },
-    {
-      "source": "/tiktok",
-      "destination": "https://www.tiktok.com/@daleymottley",
-      "permanent": true
-    },
-    {
-      "source": "/youtube",
-      "destination": "https://www.youtube.com/@DaleyMottley",
-      "permanent": true
-    },
-    {
-      "source": "/twitter",
-      "destination": "https://x.com/DaleyMottley",
-      "permanent": true
-    },
-    {
-      "source": "/x",
-      "destination": "https://x.com/DaleyMottley",
-      "permanent": true
-    },
-    {
-      "source": "/linkedin",
-      "destination": "https://www.linkedin.com/in/daleymottley",
-      "permanent": true
-    },
-    {
-      "source": "/dev",
-      "destination": "https://github.com/daley-mottley",
-      "permanent": true
-    },
-    {
-      "source": "/github",
-      "destination": "https://github.com/daley-mottley",
-      "permanent": true
-    },
-    {
-      "source": "/dev/blog",
-      "destination": "https://dev.to/daleymottley",
-      "permanent": true
-    },
-    {
-      "source": "/tips",
-      "destination": "https://aireadytips.substack.com",
-      "permanent": true
-    },
-    {
-      "source": "/blog",
-      "destination": "https://aireadytips.substack.com",
-      "permanent": true
-    },
-    {
-      "source": "/newsletter",
-      "destination": "https://aireadytips.substack.com/about",
-      "permanent": true
-    },
-    {
-      "source": "/ai",
-      "destination": "https://aireadytips.substack.com/about",
-      "permanent": true
-    },
-    {
-      "source": "/ai/tips",
-      "destination": "https://aireadytips.substack.com",
-      "permanent": true
-    },
-    {
-      "source": "/ai/blog",
-      "destination": "https://aireadytips.substack.com",
-      "permanent": true
-    },
-    {
-      "source": "/ai/newsletter",
-      "destination": "https://aireadytips.substack.com",
-      "permanent": true
-    },
-    {
-      "source": "/ai/newsletter/:slug",
-      "destination": "https://aireadytips.substack.com/p/:slug",
-      "permanent": true
-    }
+    {"source": "/quiz", "destination": "https://ai-ready.daleymottley.com/quiz", "permanent": true},
+    {"source": "/quiz/(.*)", "destination": "https://ai-ready.daleymottley.com/quiz/$1", "permanent": true},
+    {"source": "/tiktok", "destination": "https://www.tiktok.com/@daleymottley", "permanent": true},
+    {"source": "/youtube", "destination": "https://www.youtube.com/@DaleyMottley", "permanent": true},
+    {"source": "/twitter", "destination": "https://x.com/DaleyMottley", "permanent": true},
+    {"source": "/x", "destination": "https://x.com/DaleyMottley", "permanent": true},
+    {"source": "/linkedin", "destination": "https://www.linkedin.com/in/daleymottley", "permanent": true},
+    {"source": "/dev", "destination": "https://github.com/daley-mottley", "permanent": true},
+    {"source": "/github", "destination": "https://github.com/daley-mottley", "permanent": true},
+    {"source": "/dev/blog", "destination": "https://dev.to/daleymottley", "permanent": true},
+    {"source": "/tips", "destination": "https://aireadytips.substack.com", "permanent": true},
+    {"source": "/blog", "destination": "https://aireadytips.substack.com", "permanent": true},
+    {"source": "/newsletter", "destination": "https://aireadytips.substack.com/about", "permanent": true},
+    {"source": "/ai", "destination": "https://aireadytips.com/daleymottley", "permanent": true},
+    {"source": "/ai/tips", "destination": "https://aireadytips.substack.com", "permanent": true},
+    {"source": "/ai/blog", "destination": "https://aireadytips.substack.com", "permanent": true},
+    {"source": "/ai/newsletter", "destination": "https://aireadytips.substack.com", "permanent": true},
+    {"source": "/ai/newsletter/:slug", "destination": "https://aireadytips.substack.com/p/:slug", "permanent": true}
   ]
 }
