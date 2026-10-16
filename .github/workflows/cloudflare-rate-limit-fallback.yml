@@ -1,3 +1,4 @@
+# Preview-trigger verification: this workflow deploys the dedicated cloudflare branch only to Cloudflare Pages.
 name: Cloudflare fallback (Vercel rate limit only)
 
 on:
