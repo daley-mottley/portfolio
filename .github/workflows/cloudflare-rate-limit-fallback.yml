@@ -96,7 +96,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
-      - name: Prepare static portfolio files
+      - name: Prepare static portfolio files and Cloudflare routing rules
         run: |
           mkdir -p /tmp/portfolio-site
           rsync -a \
@@ -106,6 +106,45 @@ jobs:
             --exclude='*.md' \
             --exclude='.gitignore' \
             ./ /tmp/portfolio-site/
+
+          # Vercel's vercel.json is not applied by Cloudflare Pages. Convert its
+          # existing headers and redirects to the equivalent Pages files.
+          node <<'NODE'
+          const fs = require('node:fs');
+          const config = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
+          const output = '/tmp/portfolio-site';
+
+          const headerLines = [];
+          for (const rule of (config.headers || [])) {
+            const source = rule.source === '/(.*)' ? '/*' : rule.source;
+            headerLines.push(source);
+            for (const header of rule.headers || []) {
+              headerLines.push(`  ${header.key}: ${header.value}`);
+            }
+            headerLines.push('');
+          }
+          if (headerLines.length) {
+            fs.writeFileSync(`${output}/_headers`, headerLines.join('\n').trimEnd() + '\n');
+          }
+
+          const redirectLines = [];
+          for (const rule of (config.redirects || [])) {
+            let source = rule.source;
+            let destination = rule.destination;
+            if (source === '/quiz/(.*)') {
+              source = '/quiz/*';
+              destination = destination.replace('$1', ':splat');
+            } else if (source === '/ai/newsletter/:slug') {
+              source = '/ai/newsletter/*';
+              destination = destination.replace(':slug', ':splat');
+            }
+            const status = rule.permanent ? 301 : 302;
+            redirectLines.push(`${source} ${destination} ${status}`);
+          }
+          if (redirectLines.length) {
+            fs.writeFileSync(`${output}/_redirects`, redirectLines.join('\n') + '\n');
+          }
+          NODE
 
       - name: Deploy to Cloudflare Pages
         env:
