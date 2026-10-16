@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened]
 
 permissions:
   contents: read
@@ -28,9 +26,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const sha = context.eventName === 'pull_request'
-              ? context.payload.pull_request.head.sha
-              : context.sha;
+            const sha = context.sha;
             const expectedContexts = ['Vercel – portfolio', 'Vercel – daley'];
             const deadline = Date.now() + 15 * 60 * 1000;
 
@@ -87,14 +83,14 @@ jobs:
     needs: check-vercel-rate-limit
     if: >-
       needs.check-vercel-rate-limit.outputs.deploy == 'true' &&
-      (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+      github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - name: Check out the exact commit
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          ref: ${{ github.sha }}
 
       - name: Prepare static portfolio files and Cloudflare routing rules
         run: |
@@ -150,9 +146,9 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 3c6d26004c03dac0c3f2dc6834b7bd56
-          COMMIT_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
-          DEPLOY_BRANCH: ${{ github.head_ref || github.ref_name }}
-          COMMIT_MESSAGE: ${{ github.event.head_commit.message || github.event.pull_request.title || 'Portfolio fallback deployment' }}
+          COMMIT_SHA: ${{ github.sha }}
+          DEPLOY_BRANCH: main
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message || 'Portfolio fallback deployment' }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
             echo "::error::Missing repository Actions secret CLOUDFLARE_API_TOKEN. Add a Cloudflare API token with Account > Cloudflare Pages > Edit permission."
