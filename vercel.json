@@ -23,13 +23,13 @@
     {"source": "/dev", "destination": "https://github.com/daley-mottley", "permanent": true},
     {"source": "/github", "destination": "https://github.com/daley-mottley", "permanent": true},
     {"source": "/dev/blog", "destination": "https://dev.to/daleymottley", "permanent": true},
-    {"source": "/tips", "destination": "https://aireadytips.substack.com", "permanent": true},
-    {"source": "/blog", "destination": "https://aireadytips.substack.com", "permanent": true},
-    {"source": "/newsletter", "destination": "https://aireadytips.substack.com/about", "permanent": true},
-    {"source": "/ai", "destination": "https://aireadytips.com/daleymottley", "permanent": true},
-    {"source": "/ai/tips", "destination": "https://aireadytips.substack.com", "permanent": true},
-    {"source": "/ai/blog", "destination": "https://aireadytips.substack.com", "permanent": true},
-    {"source": "/ai/newsletter", "destination": "https://aireadytips.substack.com", "permanent": true},
-    {"source": "/ai/newsletter/:slug", "destination": "https://aireadytips.substack.com/p/:slug", "permanent": true}
+    {"source": "/tips", "destination": "https://aireadytips.com/about", "permanent": true},
+    {"source": "/blog", "destination": "https://aireadytips.com/about", "permanent": true},
+    {"source": "/newsletter", "destination": "https://aireadytips.com/about/about", "permanent": true},
+    {"source": "/ai", "destination": "https://aireadytips.com/about", "permanent": true},
+    {"source": "/ai/tips", "destination": "https://aireadytips.com/about", "permanent": true},
+    {"source": "/ai/blog", "destination": "https://aireadytips.com/about", "permanent": true},
+    {"source": "/ai/newsletter", "destination": "https://aireadytips.com/about", "permanent": true},
+    {"source": "/ai/newsletter/:slug", "destination": "https://aireadytips.com/about/p/:slug", "permanent": true}
   ]
 }
