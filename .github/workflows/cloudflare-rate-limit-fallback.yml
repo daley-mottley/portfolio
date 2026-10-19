@@ -103,6 +103,13 @@ jobs:
         with:
           ref: ${{ github.sha }}
 
+      - name: Verify fallback has a homepage
+        run: |
+          if [ ! -s index.html ]; then
+            echo "::error::Cloudflare fallback requires a non-empty root index.html; refusing to deploy a blank site."
+            exit 1
+          fi
+
       - name: Prepare static portfolio files and Cloudflare routing rules
         run: |
           mkdir -p /tmp/portfolio-site
