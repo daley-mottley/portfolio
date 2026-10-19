@@ -24,10 +24,10 @@ function tagValue(xml, tag) {
 
 function plainText(html) {
   return html
-    .replace(/<script[\\s\\S]*?<\\/script>/gi, " ")
-    .replace(/<style[\\s\\S]*?<\\/style>/gi, " ")
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ")
-    .replace(/\\s+/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
@@ -40,33 +40,34 @@ export async function onRequestGet() {
     if (!response.ok) throw new Error("RSS feed returned " + response.status);
 
     const xml = await response.text();
-    const itemMatch = xml.match(/<item(?:\\s[^>]*)?>([\\s\\S]*?)<\\/item>/i);
+    const itemMatch = xml.match(/<item(?:\s[^>]*)?>([\s\S]*?)<\/item>/i);
     if (!itemMatch) throw new Error("No article found in RSS feed");
 
     const item = itemMatch[1];
     const title = plainText(tagValue(item, "title"));
-    const link = tagValue(item, "link").replace(/<!\\[CDATA\\[|\\]\\]>/g, "").trim();
+    const link = tagValue(item, "link").trim();
     const description = tagValue(item, "description") || tagValue(item, "content:encoded");
-    const excerpt = plainText(description).slice(0, 260).replace(/\\s+\\S*$/, "") + (plainText(description).length > 260 ? "…" : "");
+    const cleanDescription = plainText(description);
+    const excerpt = cleanDescription.length > 260
+      ? cleanDescription.slice(0, 260).replace(/\s+\S*$/, "") + "…"
+      : cleanDescription;
 
-    if (!title || !link || !/^https:\\/\\//i.test(link) || !link.startsWith("https://aireadytips.substack.com/")) {
+    if (!title || !link || !/^https:\/\//i.test(link) || !link.startsWith("https://aireadytips.substack.com/")) {
       throw new Error("RSS article fields were missing or invalid");
     }
 
     return new Response(JSON.stringify({ title, excerpt, url: link }), {
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "public, max-age=900, s-maxage=900",
-        "Access-Control-Allow-Origin": "*"
+        "Cache-Control": "public, max-age=900, s-maxage=900"
       }
     });
-  } catch (error) {
+  } catch (_) {
     return new Response(JSON.stringify({ error: "Latest article is temporarily unavailable" }), {
       status: 502,
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "no-store",
-        "Access-Control-Allow-Origin": "*"
+        "Cache-Control": "no-store"
       }
     });
   }
