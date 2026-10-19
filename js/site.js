@@ -39,10 +39,40 @@
       if (lang === 'es') url.searchParams.set('lang','es'); else url.searchParams.delete('lang');
       history.replaceState({}, '', url);
     }
-    document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
+    const languageToggle = document.getElementById('lang-toggle');
+    const languageMenu = document.getElementById('lang-menu');
+    if (languageToggle && languageMenu) {
+      languageToggle.addEventListener('click', event => {
+        event.stopPropagation();
+        const open = languageMenu.hidden;
+        languageMenu.hidden = !open;
+        languageToggle.setAttribute('aria-expanded', String(open));
+      });
+      languageMenu.addEventListener('click', event => {
+        const button = event.target.closest('[data-lang]');
+        if (!button) return;
+        setLanguage(button.dataset.lang);
+        languageMenu.hidden = true;
+        languageToggle.setAttribute('aria-expanded', 'false');
+      });
+      document.addEventListener('click', event => {
+        if (!event.target.closest('.lang')) {
+          languageMenu.hidden = true;
+          languageToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+          languageMenu.hidden = true;
+          languageToggle.setAttribute('aria-expanded', 'false');
+          languageToggle.focus();
+        }
+      });
+    }
     let initial = new URLSearchParams(location.search).get('lang');
-    if (!initial) { try { initial = localStorage.getItem('daley-site-language'); } catch (_) {} }
-    setLanguage(initial === 'es' ? 'es' : 'en');
+    if (!initial) { try { initial = localStorage.getItem('daley-site-language') || localStorage.getItem('language'); } catch (_) {} }
+    const supportedLanguages = ['en','es','fr','de','zh','ja','pt','fa'];
+    setLanguage(supportedLanguages.includes(initial) ? initial : 'en');
     document.getElementById('year').textContent = new Date().getFullYear();
 
     async function loadLatestArticle() {
