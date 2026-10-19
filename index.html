@@ -32,7 +32,7 @@
     .side-note{align-self:end;border-left:1px solid var(--line);padding:0 0 0 19px;margin-bottom:12px}.side-note strong{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:9px}.side-note p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}
     .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.ticker-label{font:500 10px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.socials{display:flex;gap:clamp(16px,3vw,36px);flex-wrap:wrap}.socials a{font-size:13px;font-weight:600}.socials a span{font-size:11px;color:var(--accent);margin-left:4px}
     .latest-section{padding:64px 0 72px;border-top:1px solid var(--line)}.latest-article{max-width:760px;margin:0 auto;padding:0}.latest-article-label{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:10px}.latest-article h3{font:500 clamp(20px,2.5vw,25px)/1.25 var(--display);letter-spacing:-.035em;margin:0 0 10px}.latest-article p{font-size:14px;line-height:1.7;margin:0 0 18px;color:var(--muted)}.latest-article[hidden]{display:none}.text-link{font-size:13px;font-weight:700;border-bottom:1px solid var(--accent);padding-bottom:5px;display:inline-block}.footer{border-top:1px solid var(--line);padding:25px 0 32px;display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:12px}.footer a{color:var(--ink)}
-    @media(max-width:700px){.wrap{width:calc(100% - 36px)}.topbar{height:70px}.nav{gap:13px}.nav .nav-about{display:none}.hero{min-height:auto;padding:84px 0 65px;grid-template-columns:1fr;gap:35px}h1{font-size:clamp(55px,13vw,82px);margin-top:23px}.side-note{max-width:310px;justify-self:end}.ticker{align-items:flex-start;flex-direction:column;gap:16px}.socials{gap:17px}.latest-section{padding:48px 0 56px}.footer{align-items:flex-start;flex-direction:column;gap:10px}}
+    @media(max-width:700px){.wrap{width:calc(100% - 36px)}.topbar{height:70px}.nav{gap:13px}.nav .nav-about{display:none}.hero{min-height:auto;padding:84px 0 65px;grid-template-columns:1fr;gap:35px}h1{font-size:clamp(55px,13vw,82px);margin-top:23px}.assessment-card{max-width:440px;width:100%;justify-self:end}.ticker{align-items:flex-start;flex-direction:column;gap:16px}.socials{gap:17px}.latest-section{padding:48px 0 56px}.footer{align-items:flex-start;flex-direction:column;gap:10px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
   </style>
 </head>
@@ -59,9 +59,20 @@
           <a class="button secondary" href="https://aireadytips.substack.com/subscribe" target="_blank" rel="noopener noreferrer" data-i18n-html="secondaryCta">Get AI Ready Tips <span aria-hidden="true">↗</span></a>
         </div>
       </div>
-      <aside class="side-note">
-        <strong data-i18n="sideTitle">The short version</strong>
-        <p data-i18n="sideCopy">Less repetitive work. More room for the work that matters. AI made practical, one workflow at a time.</p>
+      <aside class="assessment-card" aria-labelledby="assessment-title">
+        <span class="form-tag">AI Workflow Assessment</span>
+        <h2 id="assessment-title">Find your next workflow to improve.</h2>
+        <p>Tell me where work gets repetitive. I’ll review your request and follow up about a practical next step for your business.</p>
+        <form class="assessment-form" id="assessment-form">
+          <label>Your name<input name="name" autocomplete="name" required></label>
+          <label>Work email<input type="email" name="email" autocomplete="email" required></label>
+          <label>Business name<input name="business" autocomplete="organization" required></label>
+          <label>What would you most like to improve?<select name="workflow" required><option value="">Choose a workflow</option><option>Lead follow-up and sales</option><option>Customer service and enquiries</option><option>Admin and data entry</option><option>Marketing and content</option><option>Client onboarding and delivery</option><option>Reporting and research</option><option>Not sure yet</option></select></label>
+          <label>What makes this work difficult or time-consuming?<textarea name="challenge" rows="3" required></textarea></label>
+          <label>How much time do you think it takes each week?<select name="time" required><option value="">Choose an estimate</option><option>Under 2 hours</option><option>2–5 hours</option><option>6–10 hours</option><option>More than 10 hours</option><option>Not sure</option></select></label>
+          <button class="button primary" type="submit">Request my assessment <span aria-hidden="true">↗</span></button>
+          <p class="form-note">This opens an email draft with your answers so you can review it before sending. No commitment required.</p>
+        </form>
       </aside>
     </section>
     <section class="wrap ticker" aria-label="Social links">
