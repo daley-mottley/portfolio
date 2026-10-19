@@ -105,10 +105,10 @@
 			$('body').addClass('menu-transitioning');
 			
 			if ($('body').hasClass('offcanvas')) {
-				$this.removeClass('active');
+				$this.removeClass('active').attr('aria-expanded', 'false');
 				$('body').removeClass('offcanvas');
 			} else {
-				$this.addClass('active');
+				$this.addClass('active').attr('aria-expanded', 'true');
 				$('body').addClass('offcanvas');
 			}
 			
@@ -119,28 +119,42 @@
 		});
 	};
 
-	// Click outside of offcanvass
+	// Click outside or overlay of offcanvas
 	var mobileMenuOutsideClick = function() {
 
+		$(document).on('click', '.colorlib-nav-overlay', function (e) {
+			if ($('body').hasClass('offcanvas')) {
+				$('body').removeClass('offcanvas');
+				$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
+			}
+		});
+
 		$(document).click(function (e) {
-	    var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
-	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+			var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
 
-	    	if ( $('body').hasClass('offcanvas') ) {
+				if ( $('body').hasClass('offcanvas') ) {
 
-    			$('body').removeClass('offcanvas');
-    			$('.js-colorlib-nav-toggle').removeClass('active');
-			
-	    	}
-	    	
-	    }
+					$('body').removeClass('offcanvas');
+					$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
+
+				}
+
+			}
+		});
+
+		$(document).keydown(function(e) {
+			if (e.key === "Escape" && $('body').hasClass('offcanvas')) {
+				$('body').removeClass('offcanvas');
+				$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false').focus();
+			}
 		});
 
 		$(window).scroll(function(){
 			if ( $('body').hasClass('offcanvas') ) {
 
     			$('body').removeClass('offcanvas');
-    			$('.js-colorlib-nav-toggle').removeClass('active');
+			$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
 			
 	    	}
 		});
@@ -162,7 +176,12 @@
 		    if ( navbar.is(':visible')) {
 		    	navbar.removeClass('in');
 		    	navbar.attr('aria-expanded', 'false');
-		    	$('.js-colorlib-nav-toggle').removeClass('active');
+			$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
+		    }
+
+		    if ($('body').hasClass('offcanvas')) {
+			$('body').removeClass('offcanvas');
+			$('.js-colorlib-nav-toggle').removeClass('active').attr('aria-expanded', 'false');
 		    }
 
 		    event.preventDefault();
