@@ -26,7 +26,7 @@
     .wordmark{font-family:var(--display);font-weight:700;letter-spacing:-.06em;font-size:21px}.wordmark span{color:var(--accent)}.nav{display:flex;align-items:center;gap:28px;font-size:13px;color:var(--muted)}.nav a:hover,.socials a:hover{color:var(--accent)}
     .lang{display:flex;align-items:center;gap:5px;font:500 11px 'DM Mono',monospace}.lang button{border:0;background:transparent;padding:7px 5px;color:var(--muted);cursor:pointer;font:inherit}.lang button[aria-pressed=true]{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
     .hero{min-height:660px;padding:92px 0 78px;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,390px);gap:clamp(32px,5vw,64px);align-items:center}.eyebrow{font:500 11px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);display:flex;align-items:center;gap:10px}.dot{width:7px;height:7px;border-radius:50%;background:#72a66c;box-shadow:0 0 0 4px #72a66c20}
-    .profile-ring{width:112px;height:112px;margin:30px 0 0;border-radius:50%;overflow:hidden}.profile-ring img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border:0;border-radius:50%}
+    .profile-social-row{display:flex;align-items:center;gap:24px;margin-top:30px}.profile-ring{flex:0 0 112px;width:112px;height:112px;margin:0;border-radius:50%;overflow:hidden}.profile-ring img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border:0;border-radius:50%}.profile-social-row .ticker{display:block;border:0;padding:0;min-width:0}.profile-social-row .ticker-label{display:block;margin-bottom:12px}.profile-social-row .socials{gap:10px 18px}.profile-social-row .socials a{white-space:nowrap}
     h1{font-family:var(--display);font-weight:600;letter-spacing:-.075em;line-height:.98;font-size:clamp(56px,8.5vw,108px);max-width:850px;margin:27px 0 26px}h1 em{font-family:var(--serif);font-weight:400;color:var(--accent);letter-spacing:-.07em}.intro{font-size:clamp(17px,2vw,20px);line-height:1.7;color:#55534f;max-width:550px;margin:0}
     .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}.button{min-height:48px;padding:0 19px;display:inline-flex;align-items:center;justify-content:center;gap:18px;border:1px solid var(--ink);border-radius:3px;font-size:13px;font-weight:600;transition:transform .2s,background .2s}.button:hover{transform:translateY(-2px)}.button.primary{background:var(--ink);color:white}.button.primary:hover{background:#393735}.button.secondary{border-color:var(--line)}
     .assessment-card{align-self:center;justify-self:end;width:100%;max-width:390px;position:relative;overflow:hidden;border:1px solid var(--line);padding:clamp(22px,3vw,30px);background:#fffdf9;border-radius:5px;box-shadow:0 16px 44px #20201f0b}
@@ -37,7 +37,7 @@
     .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.ticker-label{font:500 10px 'DM Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.socials{display:flex;gap:clamp(16px,3vw,36px);flex-wrap:wrap}.socials a{font-size:13px;font-weight:600}.socials a span{font-size:11px;color:var(--accent);margin-left:4px}
     .latest-section{padding:64px 0 72px;border-top:1px solid var(--line)}.latest-article{max-width:760px;margin:0 auto;padding:0}.latest-article-label{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:10px}.latest-article h3{font:500 clamp(20px,2.5vw,25px)/1.25 var(--display);letter-spacing:-.035em;margin:0 0 10px}.latest-article p{font-size:14px;line-height:1.7;margin:0 0 18px;color:var(--muted)}.latest-article[hidden]{display:none}.text-link{font-size:13px;font-weight:700;border-bottom:1px solid var(--accent);padding-bottom:5px;display:inline-block}.footer{border-top:1px solid var(--line);padding:25px 0 32px;display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:12px}.footer a{color:var(--ink)}
     @media(max-width:900px) and (min-width:701px){.hero{grid-template-columns:minmax(0,1fr) minmax(300px,350px);gap:28px;padding:78px 0 68px}h1{font-size:clamp(55px,7vw,82px)}.assessment-card{padding:22px}}
-    @media(max-width:700px){.wrap{width:calc(100% - 36px)}.topbar{height:70px}.nav{gap:13px}.nav .nav-about{display:none}.hero{min-height:auto;padding:58px 0 48px;grid-template-columns:minmax(0,1fr);gap:40px;align-items:start}h1{font-size:clamp(55px,13vw,82px);margin-top:23px}.assessment-card{max-width:none;width:100%;justify-self:stretch;padding:24px 20px}.assessment-card h2{font-size:28px}.assessment-form{gap:15px}.assessment-form input,.assessment-form select,.assessment-form textarea{font-size:16px;min-height:48px}.assessment-form textarea{min-height:100px}.assessment-form .button{min-height:54px}.ticker{align-items:flex-start;flex-direction:column;gap:16px}.socials{gap:17px}.latest-section{padding:48px 0 56px}.footer{align-items:flex-start;flex-direction:column;gap:10px}}
+    @media(max-width:700px){.wrap{width:calc(100% - 36px)}.topbar{height:70px}.nav{gap:13px}.nav .nav-about{display:none}.hero{min-height:auto;padding:58px 0 48px;grid-template-columns:minmax(0,1fr);gap:40px;align-items:start}.profile-social-row{gap:16px;margin-top:24px}.profile-ring{flex-basis:88px;width:88px;height:88px}.profile-social-row .ticker-label{font-size:9px;margin-bottom:9px}.profile-social-row .socials{gap:9px 13px}.profile-social-row .socials a{font-size:12px}h1{font-size:clamp(55px,13vw,82px);margin-top:28px}.assessment-card{max-width:none;width:100%;justify-self:stretch;padding:24px 20px}.assessment-card h2{font-size:28px}.assessment-form{gap:15px}.assessment-form input,.assessment-form select,.assessment-form textarea{font-size:16px;min-height:48px}.assessment-form textarea{min-height:100px}.assessment-form .button{min-height:54px}.ticker{align-items:flex-start;flex-direction:column;gap:16px}.socials{gap:17px}.latest-section{padding:48px 0 56px}.footer{align-items:flex-start;flex-direction:column;gap:10px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
   </style>
 </head>
@@ -56,16 +56,18 @@
     <section class="wrap hero" aria-labelledby="hero-title">
       <div>
         <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="eyebrow">AI consultant · Barbados & everywhere</span></div>
-        <div class="profile-ring"><img src="https://res.cloudinary.com/dzpafdvkm/image/upload/f_auto/v1719909061/Portfolio/profile-pic.png" alt="Portrait of Daley Mottley" width="102" height="102" fetchpriority="high"></div>
-    <section class="ticker" aria-label="Social links">
-      <span class="ticker-label" data-i18n="findMe">Find me around the web</span>
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/daleymottley/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
-        <a href="https://x.com/AIReadyTips" target="_blank" rel="noopener noreferrer">X <span>↗</span></a>
-        <a href="https://aireadytips.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Substack <span>↗</span></a>
-        <a href="https://github.com/daley-mottley" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-      </div>
-    </section>
+        <div class="profile-social-row">
+          <div class="profile-ring"><img src="https://res.cloudinary.com/dzpafdvkm/image/upload/f_auto/v1719909061/Portfolio/profile-pic.png" alt="Portrait of Daley Mottley" width="112" height="112" fetchpriority="high"></div>
+          <section class="ticker" aria-label="Social links">
+            <span class="ticker-label" data-i18n="findMe">Find me around the web</span>
+            <div class="socials">
+              <a href="https://www.linkedin.com/in/daleymottley/" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
+              <a href="https://x.com/AIReadyTips" target="_blank" rel="noopener noreferrer">X <span>↗</span></a>
+              <a href="https://aireadytips.substack.com/subscribe" target="_blank" rel="noopener noreferrer">Substack <span>↗</span></a>
+              <a href="https://github.com/daley-mottley" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+            </div>
+          </section>
+        </div>
         <h1 id="hero-title" data-i18n-html="headline">I help entrepreneurs<br>make AI <em>useful.</em></h1>
         <p class="intro" data-i18n="intro">Practical AI guidance for entrepreneurs and business owners who want to save time, simplify their work, and feel confident using AI.</p>
         <div class="actions">
