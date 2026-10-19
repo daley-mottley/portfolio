@@ -119,7 +119,7 @@
           }
         } catch (_) {
           if (status) {
-            status.textContent = 'Your request could not be sent right now. Please email daley.mottley@hotmail.com directly and include your assessment details.';
+            status.textContent = 'Unable to send your request. Please try again.';
             status.setAttribute('role', 'alert');
           }
         } finally {
