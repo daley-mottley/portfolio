@@ -2,7 +2,7 @@
       en: {
         title:'Daley Mottley — AI made practical',description:'Daley Mottley helps entrepreneurs and business owners apply AI in practical ways that save time and simplify work.',
         navAbout:'About',navNotes:'AI Ready Tips ↗',navContact:'Contact ↗',eyebrow:'AI consultant · Barbados & everywhere',
-        headline:'I help businesses<br>make AI <em>useful.</em>',intro:'Practical AI guidance for entrepreneurs and business owners who want to save time, simplify their work, and feel confident using AI. No tech overwhelm required.',
+        headline:'I help people<br>make AI <em>useful.</em>',intro:'Practical AI guidance for entrepreneurs and business owners who want to save time, simplify their work, and feel confident using AI.',
         primaryCta:'Let’s talk <span aria-hidden="true">↗</span>',secondaryCta:'Get AI Ready Tips <span aria-hidden="true">↗</span>',
         sideTitle:'The short version',sideCopy:'Less repetitive work. More room for the work that matters. AI made practical, one workflow at a time.',
         findMe:'Find me around the web',aboutTag:'01 / A little about my work',aboutHeadline:'Good technology should make work feel <em>lighter.</em>',
