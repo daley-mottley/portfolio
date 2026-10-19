@@ -59,6 +59,7 @@
         excerpt.textContent = article.excerpt;
         link.href = article.url;
         card.hidden = false;
+        document.querySelector(".latest-section").hidden = false;
       } catch (_) {
         // Keep the section clean if the RSS feed is temporarily unavailable.
         card.hidden = true;
