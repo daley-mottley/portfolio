@@ -87,7 +87,8 @@
           <label for="assessment-challenge">What makes this work difficult?<textarea id="assessment-challenge" name="challenge" rows="3" placeholder="A few details about the task or process..." required></textarea></label>
           <label for="assessment-time">Time spent each week<select id="assessment-time" name="time" required><option value="">Choose an estimate</option><option>Under 2 hours</option><option>2–5 hours</option><option>6–10 hours</option><option>More than 10 hours</option><option>Not sure</option></select></label>
           <button class="button primary" type="submit">Request my assessment <span aria-hidden="true">↗</span></button>
-          <p class="form-note">This opens an email draft with your answers so you can review it before sending. No commitment required.</p>
+          <p class="form-note" id="assessment-status" aria-live="polite" hidden></p>
+          <p class="form-note">Your answers will be emailed directly to Daley. No commitment required.</p>
         </form>
       </aside>
     </section>
