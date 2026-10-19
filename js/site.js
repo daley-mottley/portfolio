@@ -66,3 +66,29 @@
       }
     }
     loadLatestArticle();
+
+
+    // The assessment form prepares an email for the visitor to review and send.
+    const assessmentForm = document.getElementById('assessment-form');
+    if (assessmentForm) {
+      assessmentForm.addEventListener('submit', event => {
+        event.preventDefault();
+        if (!assessmentForm.reportValidity()) return;
+        const values = new FormData(assessmentForm);
+        const subject = 'AI Workflow Assessment Request';
+        const body = [
+          'AI Workflow Assessment Request',
+          '',
+          'Name: ' + values.get('name'),
+          'Work email: ' + values.get('email'),
+          'Business: ' + values.get('business'),
+          'Workflow to improve: ' + values.get('workflow'),
+          'Weekly time estimate: ' + values.get('time'),
+          '',
+          'Challenge:',
+          values.get('challenge')
+        ].join('\n');
+        window.location.href = 'mailto:daley.mottley@hotmail.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    }
