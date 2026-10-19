@@ -107,9 +107,8 @@
           submitButton.textContent = 'Sending request…';
         }
         if (status) {
-          status.hidden = false;
-          status.textContent = 'Sending your request…';
-          status.setAttribute('role', 'status');
+          status.hidden = true;
+          status.textContent = '';
         }
 
         try {
