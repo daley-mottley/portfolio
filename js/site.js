@@ -68,7 +68,7 @@
     loadLatestArticle();
 
 
-    // Send assessment submissions directly to Daley by email.
+    // Use the same Formspree endpoint as the original contact form, which is already configured.
     const assessmentForm = document.getElementById('assessment-form');
     if (assessmentForm) {
       assessmentForm.addEventListener('submit', async event => {
@@ -79,19 +79,28 @@
         const originalButtonText = submitButton ? submitButton.textContent : '';
         const status = document.getElementById('assessment-status');
         const values = new FormData(assessmentForm);
-        const payload = {
-          name: String(values.get('name') || '').trim(),
-          email: String(values.get('email') || '').trim(),
-          business: String(values.get('business') || '').trim(),
-          workflow: String(values.get('workflow') || '').trim(),
-          time: String(values.get('time') || '').trim(),
-          challenge: String(values.get('challenge') || '').trim(),
-          _subject: 'New AI Workflow Assessment Request',
-          _template: 'table',
-          _replyto: String(values.get('email') || '').trim(),
-          // FormSubmit can reject requests when the browser referrer is unavailable.
-          _url: window.location.href
-        };
+        const email = String(values.get('email') || '').trim();
+
+        // Formspree receives standard contact fields plus the additional assessment details.
+        const payload = new FormData();
+        payload.append('name', String(values.get('name') || '').trim());
+        payload.append('email', email);
+        payload.append('_subject', 'New AI Workflow Assessment Request');
+        payload.append('business', String(values.get('business') || '').trim());
+        payload.append('workflow', String(values.get('workflow') || '').trim());
+        payload.append('time', String(values.get('time') || '').trim());
+        payload.append('message', [
+          'New AI Workflow Assessment Request',
+          '',
+          'Name: ' + String(values.get('name') || '').trim(),
+          'Email: ' + email,
+          'Business: ' + String(values.get('business') || '').trim(),
+          'Workflow to improve: ' + String(values.get('workflow') || '').trim(),
+          'Time spent each week: ' + String(values.get('time') || '').trim(),
+          '',
+          'Challenge:',
+          String(values.get('challenge') || '').trim()
+        ].join('\n'));
 
         if (submitButton) {
           submitButton.disabled = true;
@@ -104,16 +113,18 @@
         }
 
         try {
-          const response = await fetch('https://formsubmit.co/ajax/daley.mottley@hotmail.com', {
+          // This is the same endpoint and request style used by the original working contact form.
+          const response = await fetch('https://formspree.io/f/mvgpooel', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-            body: JSON.stringify(payload)
+            body: payload,
+            headers: { Accept: 'application/json' }
           });
           const result = await response.json().catch(() => ({}));
-          // FormSubmit may return HTTP 200 even when it rejects a submission.
-          if (!response.ok || String(result.success).toLowerCase() !== 'true') {
-            const detail = result.message || `Email service rejected the request (HTTP ${response.status}).`;
-            throw new Error(detail);
+          if (!response.ok || result.errors) {
+            const detail = Array.isArray(result.errors)
+              ? result.errors.map(item => item.message).filter(Boolean).join(' ')
+              : 'Email service rejected the request (HTTP ' + response.status + ').';
+            throw new Error(detail || 'Email service rejected the request.');
           }
 
           assessmentForm.reset();
@@ -122,19 +133,17 @@
             status.setAttribute('role', 'status');
           }
         } catch (error) {
-          // Keep diagnostic details in the browser console, while showing a useful message.
           console.error('Assessment submission failed:', error);
           if (status) {
-            const detail = error && error.message ? error.message : '';
-            status.textContent = detail
-              ? `Unable to send your request: ${detail} Please try again.`
+            status.textContent = error && error.message
+              ? 'Unable to send your request: ' + error.message + ' Please try again.'
               : 'Unable to send your request. Please check your connection and try again.';
             status.setAttribute('role', 'alert');
           }
         } finally {
           if (submitButton) {
             submitButton.disabled = false;
-            submitButton.textContent = originalButtonText || 'Send assessment request';
+            submitButton.textContent = originalButtonText || 'Request my assessment';
           }
         }
       });
