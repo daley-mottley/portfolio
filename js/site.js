@@ -68,27 +68,65 @@
     loadLatestArticle();
 
 
-    // The assessment form prepares an email for the visitor to review and send.
+    // Send assessment submissions directly to Daley by email.
     const assessmentForm = document.getElementById('assessment-form');
     if (assessmentForm) {
-      assessmentForm.addEventListener('submit', event => {
+      assessmentForm.addEventListener('submit', async event => {
         event.preventDefault();
         if (!assessmentForm.reportValidity()) return;
+
+        const submitButton = assessmentForm.querySelector('button[type="submit"], input[type="submit"]');
+        const originalButtonText = submitButton ? submitButton.textContent : '';
+        const status = document.getElementById('assessment-status');
         const values = new FormData(assessmentForm);
-        const subject = 'AI Workflow Assessment Request';
-        const body = [
-          'AI Workflow Assessment Request',
-          '',
-          'Name: ' + values.get('name'),
-          'Work email: ' + values.get('email'),
-          'Business: ' + values.get('business'),
-          'Workflow to improve: ' + values.get('workflow'),
-          'Weekly time estimate: ' + values.get('time'),
-          '',
-          'Challenge:',
-          values.get('challenge')
-        ].join('\n');
-        window.location.href = 'mailto:daley.mottley@hotmail.com?subject=' +
-          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        const payload = {
+          name: String(values.get('name') || '').trim(),
+          email: String(values.get('email') || '').trim(),
+          business: String(values.get('business') || '').trim(),
+          workflow: String(values.get('workflow') || '').trim(),
+          time: String(values.get('time') || '').trim(),
+          challenge: String(values.get('challenge') || '').trim(),
+          _subject: 'New AI Workflow Assessment Request',
+          _template: 'table',
+          _replyto: String(values.get('email') || '').trim()
+        };
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = 'Sending request…';
+        }
+        if (status) {
+          status.hidden = false;
+          status.textContent = 'Sending your request…';
+          status.setAttribute('role', 'status');
+        }
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/daley.mottley@hotmail.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          const result = await response.json().catch(() => ({}));
+          if (!response.ok || result.success === 'false' || result.success === false) {
+            throw new Error(result.message || 'Email service rejected the request');
+          }
+
+          assessmentForm.reset();
+          if (status) {
+            status.textContent = 'Thank you. Your assessment request has been sent. I’ll be in touch soon.';
+            status.setAttribute('role', 'status');
+          }
+        } catch (_) {
+          if (status) {
+            status.textContent = 'Your request could not be sent right now. Please email daley.mottley@hotmail.com directly and include your assessment details.';
+            status.setAttribute('role', 'alert');
+          }
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText || 'Send assessment request';
+          }
+        }
       });
     }
