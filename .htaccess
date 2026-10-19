@@ -1,3 +1,10 @@
+# Redirect /home to the current Cloudflare Pages branch alias.
+# The alias follows the latest successful deployment of the cloudflare branch.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^home/?$ https://cloudflare.daleymottley-portfolio-fallback.pages.dev/ [R=302,L]
+</IfModule>
+
 # Enable GZIP compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
