@@ -88,7 +88,9 @@
           challenge: String(values.get('challenge') || '').trim(),
           _subject: 'New AI Workflow Assessment Request',
           _template: 'table',
-          _replyto: String(values.get('email') || '').trim()
+          _replyto: String(values.get('email') || '').trim(),
+          // FormSubmit can reject requests when the browser referrer is unavailable.
+          _url: window.location.href
         };
 
         if (submitButton) {
@@ -108,8 +110,10 @@
             body: JSON.stringify(payload)
           });
           const result = await response.json().catch(() => ({}));
-          if (!response.ok || result.success === 'false' || result.success === false) {
-            throw new Error(result.message || 'Email service rejected the request');
+          // FormSubmit may return HTTP 200 even when it rejects a submission.
+          if (!response.ok || String(result.success).toLowerCase() !== 'true') {
+            const detail = result.message || `Email service rejected the request (HTTP ${response.status}).`;
+            throw new Error(detail);
           }
 
           assessmentForm.reset();
@@ -117,9 +121,14 @@
             status.textContent = 'Thank you. Your assessment request has been sent. I’ll be in touch soon.';
             status.setAttribute('role', 'status');
           }
-        } catch (_) {
+        } catch (error) {
+          // Keep diagnostic details in the browser console, while showing a useful message.
+          console.error('Assessment submission failed:', error);
           if (status) {
-            status.textContent = 'Unable to send your request. Please try again.';
+            const detail = error && error.message ? error.message : '';
+            status.textContent = detail
+              ? `Unable to send your request: ${detail} Please try again.`
+              : 'Unable to send your request. Please check your connection and try again.';
             status.setAttribute('role', 'alert');
           }
         } finally {
