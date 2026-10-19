@@ -13,7 +13,7 @@ function decodeEntities(value = '') {
 }
 
 function readTag(xml, tag) {
-  const match = xml.match(new RegExp('<' + tag + '(?:\s[^>]*)?>([\s\S]*?)<\/' + tag + '>', 'i'));
+  const match = xml.match(new RegExp('<' + tag + '(?:\\s[^>]*)?>([\\s\\S]*?)</' + tag + '>', 'i'));
   if (!match) return '';
   return decodeEntities(match[1].replace(/^<!\[CDATA\[([\s\S]*?)\]\]>$/, '$1').trim());
 }
