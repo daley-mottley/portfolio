@@ -1,3 +1,4 @@
 /home https://cloudflare.daleymottley-portfolio-fallback.pages.dev 301
 /bookings /bookings.html 200
+/workflow /bookings 301
 /old https://984f5d18.daleymottley-portfolio-fallback.pages.dev 301
