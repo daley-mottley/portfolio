@@ -49,9 +49,9 @@
       document.documentElement.lang = lang;
       document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
       translateLatestArticleExcerpt(lang);
-      document.title = copy.title;
+      if (document.body.dataset.page !== 'bookings') document.title = copy.title;
       const description = document.querySelector('meta[name="description"]');
-      if (description) description.content = copy.description;
+      if (description && document.body.dataset.page !== 'bookings') description.content = copy.description;
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const value = copy[el.dataset.i18n];
         if (value !== undefined) el.textContent = value;
@@ -109,7 +109,8 @@
     if (!initial) { try { initial = localStorage.getItem('daley-site-language') || localStorage.getItem('language'); } catch (_) {} }
     const supportedLanguages = ['en','es','fr','de','zh','ja','pt','fa'];
     setLanguage(supportedLanguages.includes(initial) ? initial : 'en');
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const year = document.getElementById('year');
+    if (year) year.textContent = new Date().getFullYear();
 
     async function loadLatestArticle() {
       const card = document.getElementById('latest-article');
@@ -134,7 +135,7 @@
         card.hidden = true;
       }
     }
-    loadLatestArticle();
+    if (document.getElementById('latest-article')) loadLatestArticle();
 
 
     // Use the same Formspree endpoint as the original contact form, which is already configured.
