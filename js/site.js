@@ -197,6 +197,12 @@
             throw new Error(detail || 'Email service rejected the request.');
           }
 
+          // Track a successful assessment request without sending form contents to analytics.
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'booking_request_submitted', form_name: 'ai_workflow_assessment' });
+          if (window.posthog && typeof window.posthog.capture === 'function') {
+            window.posthog.capture('booking_request_submitted', { form_name: 'ai_workflow_assessment' });
+          }
           assessmentForm.reset();
           if (status) {
             status.textContent = translations[document.documentElement.lang]?.sent || translations.en.sent;
