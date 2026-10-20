@@ -17,9 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const populateLanguageOptions = () => {
     languageOptions.innerHTML = ''; // Clear existing options
     for (const [lang, { name, flag }] of Object.entries(languages)) {
-      const option = document.createElement('div');
+      const option = document.createElement('li');
       option.classList.add('language-option-item');
       option.setAttribute('data-lang', lang);
+      option.setAttribute('role', 'option');
+      option.setAttribute('tabindex', '0');
+      option.setAttribute('aria-selected', 'false');
 
       const img = document.createElement('img');
       img.src = `https://flagcdn.com/${flag}.svg`;
@@ -69,12 +72,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const toggleMenu = () => {
+    const isExpanded = selectedLanguage.getAttribute('aria-expanded') === 'true';
+    selectedLanguage.setAttribute('aria-expanded', !isExpanded);
+    languageOptions.style.display = isExpanded ? 'none' : 'block';
+    if (!isExpanded) {
+        const firstOption = languageOptions.querySelector('.language-option-item');
+        if (firstOption) firstOption.focus();
+    }
+  };
+
+  const closeMenu = () => {
+    selectedLanguage.setAttribute('aria-expanded', 'false');
+    languageOptions.style.display = 'none';
+  };
+
   const setLanguage = async (lang) => {
     try {
       document.documentElement.lang = lang;
       const translations = await fetchTranslations(lang);
       updateContent(translations);
       setStoredLanguage(lang);
+
+      // Update ARIA label and selection state
+      const langName = languages[lang]?.name || lang.toUpperCase();
+      selectedLanguage.setAttribute('aria-label', `Select language. Current: ${langName}`);
+
+      const options = languageOptions.querySelectorAll('.language-option-item');
+      options.forEach(opt => {
+        opt.setAttribute('aria-selected', opt.getAttribute('data-lang') === lang);
+      });
 
       // Dispatch a custom event to notify other scripts of the language change
       const event = new CustomEvent('languageChanged', { detail: { language: lang } });
@@ -85,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       selectedContent.innerHTML = `<i class="icon-world" style="vertical-align: middle; margin-right: 0.25em;"></i> ${lang.toUpperCase()}`;
 
       // Hide options
-      languageOptions.style.display = 'none';
+      closeMenu();
     } catch (error) {
       console.error(error);
     }
@@ -93,7 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   selectedLanguage.addEventListener('click', (event) => {
     event.stopPropagation();
-    languageOptions.style.display = languageOptions.style.display === 'block' ? 'none' : 'block';
+    toggleMenu();
+  });
+
+  selectedLanguage.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleMenu();
+    }
   });
 
   languageOptions.addEventListener('click', (event) => {
@@ -104,8 +138,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  languageOptions.addEventListener('keydown', (event) => {
+    const items = Array.from(languageOptions.querySelectorAll('.language-option-item'));
+    const currentIndex = items.indexOf(document.activeElement);
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      const nextIndex = (currentIndex + 1) % items.length;
+      items[nextIndex].focus();
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      const prevIndex = (currentIndex - 1 + items.length) % items.length;
+      items[prevIndex].focus();
+    } else if (event.key === 'Escape') {
+      closeMenu();
+      selectedLanguage.focus();
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      const lang = document.activeElement.getAttribute('data-lang');
+      if (lang) setLanguage(lang);
+      selectedLanguage.focus();
+    }
+  });
+
   document.addEventListener('click', () => {
-    languageOptions.style.display = 'none';
+    closeMenu();
   });
 
   // Populate language options and set initial language
