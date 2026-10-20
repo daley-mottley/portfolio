@@ -43,7 +43,6 @@
     .latest-section{padding:64px 0 72px;border-top:1px solid var(--line)}.latest-article{max-width:760px;margin:0 auto;padding:0}.latest-article-label{font:500 10px 'DM Mono',monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:10px}.latest-article h3{font:500 clamp(20px,2.5vw,25px)/1.25 var(--display);letter-spacing:-.035em;margin:0 0 10px}.latest-article p{font-size:14px;line-height:1.7;margin:0 0 18px;color:var(--muted)}.latest-article[hidden]{display:none}.text-link{font-size:13px;font-weight:700;border-bottom:1px solid var(--accent);padding-bottom:5px;display:inline-block}.footer{border-top:1px solid var(--line);padding:25px 0 32px;display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--muted);font-size:12px}.footer a{color:var(--ink)}
     @media(max-width:900px) and (min-width:701px){.hero{grid-template-columns:minmax(0,1fr) minmax(300px,350px);gap:28px;padding:78px 0 68px}h1{font-size:clamp(55px,7vw,82px)}.assessment-card{padding:22px}}
     @media(max-width:700px){.wrap{width:calc(100% - 36px)}.topbar{height:70px}.nav{gap:13px}.nav .nav-about{display:none}.hero{min-height:auto;padding:58px 0 48px;grid-template-columns:minmax(0,1fr);gap:40px;align-items:start}.profile-social-row{gap:16px;margin-top:24px}.profile-ring{flex-basis:88px;width:88px;height:88px}.profile-social-row .ticker-label{font-size:9px;margin-bottom:9px}.profile-social-row .socials{gap:9px 13px}.profile-social-row .socials a{font-size:12px}h1{font-size:clamp(55px,13vw,82px);margin-top:28px}.assessment-card{max-width:none;width:100%;justify-self:stretch;padding:24px 20px}.assessment-card h2{font-size:28px}.assessment-form{gap:15px}.assessment-form input,.assessment-form select,.assessment-form textarea{font-size:16px;min-height:48px}.assessment-form textarea{min-height:100px}.assessment-form .button{min-height:54px}.ticker{align-items:flex-start;flex-direction:column;gap:16px}.socials{gap:17px}.latest-section{padding:48px 0 56px}.footer{align-items:flex-start;flex-direction:column;gap:10px}}
-    .booking-form-only{display:flex;justify-content:center;min-height:0;padding:64px 0 80px}.booking-form-only .assessment-card{justify-self:auto;max-width:520px;width:100%}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
   
     .booking-intro h1{font:500 clamp(42px,6vw,76px)/.98 var(--display);letter-spacing:-.075em;margin:28px 0 22px;max-width:650px}
@@ -71,7 +70,17 @@
     </nav>
   </header>
   <main>
-    <section class="wrap hero booking-form-only" aria-label="AI consultation request">
+    <section class="wrap hero" aria-labelledby="booking-title">
+      <div class="booking-intro">
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="bookingEyebrow">AI consultation · Barbados & everywhere</span></div>
+        <h1 id="booking-title" data-i18n-html="bookingHeadline">Let’s find a practical way to make AI <em>useful.</em></h1>
+        <p class="intro" data-i18n="bookingIntro">Tell me a little about your business and the work you want to improve. I’ll review your request and get back to you so we can decide on a useful next step.</p>
+        <ul class="booking-points">
+          <li data-i18n="bookingPoint1">Discuss a workflow or business challenge that takes too much time.</li>
+          <li data-i18n="bookingPoint2">Explore practical ways AI could help your business.</li>
+          <li data-i18n="bookingPoint3">Leave with a clearer idea of what to consider next.</li>
+        </ul>
+      </div>
       <aside class="assessment-card" aria-labelledby="assessment-title">
         <div class="assessment-heading"><span class="form-tag" data-i18n="formTag">AI Consultation Request</span><span class="form-index" data-i18n="formIndex">01 / 01</span></div>
         <h2 id="assessment-title" data-i18n-html="formTitle">Let’s make AI useful for your business.</h2>
