@@ -30,6 +30,9 @@
       ]
     }
   ],
+  "rewrites": [
+    { "source": "/bookings", "destination": "/bookings.html" }
+  ],
   "redirects": [
     {
       "source": "/home",
