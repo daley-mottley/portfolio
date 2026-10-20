@@ -197,11 +197,20 @@
             throw new Error(detail || 'Email service rejected the request.');
           }
 
-          // Track a successful assessment request without sending form contents to analytics.
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: 'booking_request_submitted', form_name: 'ai_workflow_assessment' });
-          if (window.posthog && typeof window.posthog.capture === 'function') {
-            window.posthog.capture('booking_request_submitted', { form_name: 'ai_workflow_assessment' });
+          // Analytics must never turn a successful email submission into a reported failure.
+          // Some analytics setups can throw (including stack overflow errors), so isolate tracking.
+          try {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'booking_request_submitted', form_name: 'ai_workflow_assessment' });
+          } catch (trackingError) {
+            console.warn('Assessment dataLayer tracking failed:', trackingError);
+          }
+          try {
+            if (window.posthog && typeof window.posthog.capture === 'function') {
+              window.posthog.capture('booking_request_submitted', { form_name: 'ai_workflow_assessment' });
+            }
+          } catch (trackingError) {
+            console.warn('Assessment PostHog tracking failed:', trackingError);
           }
           assessmentForm.reset();
           if (status) {
