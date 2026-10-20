@@ -45,13 +45,7 @@
     @media(max-width:700px){.wrap{width:calc(100% - 36px)}.topbar{height:70px}.nav{gap:13px}.nav .nav-about{display:none}.hero{min-height:auto;padding:58px 0 48px;grid-template-columns:minmax(0,1fr);gap:40px;align-items:start}.profile-social-row{gap:16px;margin-top:24px}.profile-ring{flex-basis:88px;width:88px;height:88px}.profile-social-row .ticker-label{font-size:9px;margin-bottom:9px}.profile-social-row .socials{gap:9px 13px}.profile-social-row .socials a{font-size:12px}h1{font-size:clamp(55px,13vw,82px);margin-top:28px}.assessment-card{max-width:none;width:100%;justify-self:stretch;padding:24px 20px}.assessment-card h2{font-size:28px}.assessment-form{gap:15px}.assessment-form input,.assessment-form select,.assessment-form textarea{font-size:16px;min-height:48px}.assessment-form textarea{min-height:100px}.assessment-form .button{min-height:54px}.ticker{align-items:flex-start;flex-direction:column;gap:16px}.socials{gap:17px}.latest-section{padding:48px 0 56px}.footer{align-items:flex-start;flex-direction:column;gap:10px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
   
-    .booking-intro h1{font:500 clamp(42px,6vw,76px)/.98 var(--display);letter-spacing:-.075em;margin:28px 0 22px;max-width:650px}
-    .booking-intro h1 em{font-family:var(--serif);font-weight:400;letter-spacing:-.06em;color:var(--accent)}
-    .booking-intro .intro{max-width:520px}
-    .booking-points{display:grid;gap:13px;margin:30px 0 0;padding:0;list-style:none;color:var(--muted);font-size:14px}
-    .booking-points li{display:flex;gap:10px;align-items:flex-start}
-    .booking-points li:before{content:"✓";font-weight:700;color:var(--accent)}
-    @media(max-width:760px){.hero{min-height:0;padding-top:48px;padding-bottom:54px;grid-template-columns:1fr;gap:38px}.assessment-card{justify-self:stretch;max-width:none}.booking-intro h1{font-size:clamp(42px,12vw,64px)}}
+    @media(max-width:760px){.hero{min-height:0;padding-top:48px;padding-bottom:54px;grid-template-columns:1fr;gap:38px}.assessment-card{justify-self:stretch;max-width:none}}
   </style>
 </head>
 <body data-page="bookings">
@@ -71,16 +65,6 @@
   </header>
   <main>
     <section class="wrap hero" aria-labelledby="booking-title">
-      <div class="booking-intro">
-        <div class="eyebrow"><span class="dot" aria-hidden="true"></span><span data-i18n="bookingEyebrow">AI consultation · Barbados & everywhere</span></div>
-        <h1 id="booking-title" data-i18n-html="bookingHeadline">Let’s find a practical way to make AI <em>useful.</em></h1>
-        <p class="intro" data-i18n="bookingIntro">Tell me a little about your business and the work you want to improve. I’ll review your request and get back to you so we can decide on a useful next step.</p>
-        <ul class="booking-points">
-          <li data-i18n="bookingPoint1">Discuss a workflow or business challenge that takes too much time.</li>
-          <li data-i18n="bookingPoint2">Explore practical ways AI could help your business.</li>
-          <li data-i18n="bookingPoint3">Leave with a clearer idea of what to consider next.</li>
-        </ul>
-      </div>
       <aside class="assessment-card" aria-labelledby="assessment-title">
         <div class="assessment-heading"><span class="form-tag" data-i18n="formTag">AI Consultation Request</span><span class="form-index" data-i18n="formIndex">01 / 01</span></div>
         <h2 id="assessment-title" data-i18n-html="formTitle">Let’s make AI useful for your business.</h2>
