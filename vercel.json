@@ -25,16 +25,27 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://us.i.posthog.com https://static.hotjar.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://res.cloudinary.com https://flagcdn.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://us.i.posthog.com https://static.hotjar.com wss://ws.hotjar.com https://formspree.io; form-action https://formspree.io; frame-src 'self';"
+          "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://us.i.posthog.com https://static.hotjar.com https://us-assets.i.posthog.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://res.cloudinary.com https://flagcdn.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://us.i.posthog.com https://static.hotjar.com wss://ws.hotjar.com https://formspree.io https://formsubmit.co; form-action https://formspree.io https://formsubmit.co; frame-src 'self';"
         }
       ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/bookings",
+      "destination": "/bookings.html"
     }
   ],
   "redirects": [
     {
       "source": "/home",
-      "destination": "https://portfolio-de1kldeus-dmotts-projects.vercel.app",
-      "permanent": false
+      "destination": "https://cloudflare.daleymottley-portfolio-fallback.pages.dev",
+      "permanent": true
+    },
+    {
+      "source": "/old",
+      "destination": "https://984f5d18.daleymottley-portfolio-fallback.pages.dev",
+      "permanent": true
     },
     {
       "source": "/quiz",
@@ -88,42 +99,42 @@
     },
     {
       "source": "/tips",
-      "destination": "https://aireadytips.substack.com",
+      "destination": "https://aireadytips.com/about",
       "permanent": true
     },
     {
       "source": "/blog",
-      "destination": "https://aireadytips.substack.com",
+      "destination": "https://aireadytips.com/about",
       "permanent": true
     },
     {
       "source": "/newsletter",
-      "destination": "https://aireadytips.substack.com/about",
+      "destination": "https://aireadytips.com/about/about",
       "permanent": true
     },
     {
       "source": "/ai",
-      "destination": "https://aireadytips.com/daleymottley",
+      "destination": "https://aireadytips.com/about",
       "permanent": true
     },
     {
       "source": "/ai/tips",
-      "destination": "https://aireadytips.substack.com",
+      "destination": "https://aireadytips.com/about",
       "permanent": true
     },
     {
       "source": "/ai/blog",
-      "destination": "https://aireadytips.substack.com",
+      "destination": "https://aireadytips.com/about",
       "permanent": true
     },
     {
       "source": "/ai/newsletter",
-      "destination": "https://aireadytips.substack.com",
+      "destination": "https://aireadytips.com/about",
       "permanent": true
     },
     {
       "source": "/ai/newsletter/:slug",
-      "destination": "https://aireadytips.substack.com/p/:slug",
+      "destination": "https://aireadytips.com/about/p/:slug",
       "permanent": true
     }
   ]
