@@ -43,6 +43,11 @@
       "permanent": true
     },
     {
+      "source": "/workflow",
+      "destination": "/bookings",
+      "permanent": true
+    },
+    {
       "source": "/old",
       "destination": "https://984f5d18.daleymottley-portfolio-fallback.pages.dev",
       "permanent": true
