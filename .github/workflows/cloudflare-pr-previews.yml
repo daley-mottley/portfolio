@@ -1,5 +1,4 @@
 name: Cloudflare Pages PR previews
-# Preview deployment runs on each PR update targeting the cloudflare branch.
 
 on:
   pull_request:
@@ -111,5 +110,3 @@ jobs:
             --branch="pr-${PR_NUMBER}-preview" \
             --commit-hash="$COMMIT_SHA" \
             --commit-message="PR #${PR_NUMBER}: ${PR_TITLE}"
-
-# Keep this workflow change in the PR branch so a fresh preview run can be triggered.
