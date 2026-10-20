@@ -1,6 +1,6 @@
 const FEED_URL = "https://aireadytips.substack.com/feed";
 
-function decodeXml(value) {
+function decodeXml(value = "") {
   return value
     .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
     .replace(/&#(x[\da-f]+|\d+);/gi, (_, code) => {
@@ -22,7 +22,7 @@ function tagValue(xml, tag) {
   return match ? decodeXml(match[1].trim()) : "";
 }
 
-function plainText(html) {
+function plainText(html = "") {
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
@@ -31,11 +31,17 @@ function plainText(html) {
     .trim();
 }
 
-export async function onRequestGet() {
+export async function onRequest() {
+  const headers = {
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "public, max-age=300, s-maxage=900",
+    "X-Content-Type-Options": "nosniff"
+  };
+
   try {
     const response = await fetch(FEED_URL, {
-      headers: { "Accept": "application/rss+xml, application/xml, text/xml" },
-      cf: { cacheTtl: 900, cacheEverything: true }
+      headers: { Accept: "application/rss+xml, application/xml, text/xml" },
+      signal: AbortSignal.timeout(8000)
     });
     if (!response.ok) throw new Error("RSS feed returned " + response.status);
 
@@ -56,19 +62,11 @@ export async function onRequestGet() {
       throw new Error("RSS article fields were missing or invalid");
     }
 
-    return new Response(JSON.stringify({ title, excerpt, url: link }), {
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "public, max-age=900, s-maxage=900"
-      }
-    });
+    return new Response(JSON.stringify({ title, excerpt, url: link }), { status: 200, headers });
   } catch (_) {
     return new Response(JSON.stringify({ error: "Latest article is temporarily unavailable" }), {
       status: 502,
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-        "Cache-Control": "no-store"
-      }
+      headers: { ...headers, "Cache-Control": "no-store" }
     });
   }
 }
