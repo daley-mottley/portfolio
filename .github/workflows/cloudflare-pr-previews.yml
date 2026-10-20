@@ -1,4 +1,5 @@
 name: Cloudflare Pages PR previews
+# Preview deployment runs on each PR update targeting the cloudflare branch.
 
 on:
   pull_request:
