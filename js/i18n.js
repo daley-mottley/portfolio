@@ -17,9 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const populateLanguageOptions = () => {
     languageOptions.innerHTML = ''; // Clear existing options
     for (const [lang, { name, flag }] of Object.entries(languages)) {
-      const option = document.createElement('div');
+      const option = document.createElement('li');
       option.classList.add('language-option-item');
       option.setAttribute('data-lang', lang);
+      option.setAttribute('role', 'option');
+      option.setAttribute('tabindex', '0');
 
       const img = document.createElement('img');
       img.src = `https://flagcdn.com/${flag}.svg`;
@@ -30,6 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
       option.appendChild(img);
       option.appendChild(span);
+
+      option.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setLanguage(lang);
+        }
+      });
+
       languageOptions.appendChild(option);
     }
   };
@@ -83,9 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // Update selected language display
       const selectedContent = selectedLanguage.querySelector('.language-option-item');
       selectedContent.innerHTML = `<i class="icon-world" style="vertical-align: middle; margin-right: 0.25em;"></i> ${lang.toUpperCase()}`;
+      selectedLanguage.setAttribute('aria-label', `Select Language, currently ${languages[lang].name}`);
 
       // Hide options
       languageOptions.style.display = 'none';
+      selectedLanguage.setAttribute('aria-expanded', 'false');
     } catch (error) {
       console.error(error);
     }
@@ -93,7 +105,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   selectedLanguage.addEventListener('click', (event) => {
     event.stopPropagation();
-    languageOptions.style.display = languageOptions.style.display === 'block' ? 'none' : 'block';
+    const isExpanded = languageOptions.style.display === 'block';
+    languageOptions.style.display = isExpanded ? 'none' : 'block';
+    selectedLanguage.setAttribute('aria-expanded', !isExpanded);
   });
 
   languageOptions.addEventListener('click', (event) => {
@@ -106,6 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', () => {
     languageOptions.style.display = 'none';
+    selectedLanguage.setAttribute('aria-expanded', 'false');
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && languageOptions.style.display === 'block') {
+      languageOptions.style.display = 'none';
+      selectedLanguage.setAttribute('aria-expanded', 'false');
+      selectedLanguage.focus();
+    }
   });
 
   // Populate language options and set initial language
