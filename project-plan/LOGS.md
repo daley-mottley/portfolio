@@ -65,3 +65,15 @@ This file is used to document errors, issues, and their resolutions throughout t
 - **Impact**: Updated placeholder text to be more aligned with user preference.
 - **Resolution**: Modified the originalText variable in js/custom.js.
 - **Prevention**: Documented the change in project plan files.
+
+### [04/Feb/2025] - Website Performance Optimization and Asset Audit
+- **Environment**: Development
+- **Description**: Identified and resolved multiple performance issues:
+  1. Consolidated Google Fonts to v2 API with &display=swap for faster loading and better rendering.
+  2. Added preconnect and dns-prefetch resource hints for critical external domains (Cloudinary, Google Fonts).
+  3. Implemented preloading for the LCP asset (profile-pic.png) to improve core web vitals.
+  4. Removed broken flaticon.css reference causing 404 errors.
+  5. Fixed Poppins font family implementation and CSS typos.
+- **Impact**: Significant reduction in HTTP requests, faster First Contentful Paint (FCP) and Largest Contentful Paint (LCP), and eliminated console errors.
+- **Resolution**: Applied optimizations to index.html and verified via automated Playwright tests.
+- **Prevention**: Perform regular asset audits and use performance-monitoring tools during development.
