@@ -1,9 +1,13 @@
+# Cloudflare preview fallback for the dedicated cloudflare branch and PRs targeting it.
 name: Cloudflare fallback (Vercel rate limit only)
 
 on:
   push:
     branches:
       - main
+      - cloudflare
+  pull_request:
+    branches:
       - cloudflare
 
 permissions:
@@ -29,6 +33,13 @@ jobs:
           script: |
             // The dedicated cloudflare branch is a manual preview lane and should
             // deploy on every push without depending on Vercel status checks.
+            if (context.eventName === 'pull_request') {
+              core.info('PR targeting cloudflare detected; deploy a separate Cloudflare preview.');
+              core.setOutput('deploy', 'true');
+              core.setOutput('reason', `Preview for PR #${context.payload.pull_request.number}`);
+              return;
+            }
+
             if (context.ref === 'refs/heads/cloudflare') {
               core.info('Dedicated Cloudflare preview branch detected; deploy preview.');
               core.setOutput('deploy', 'true');
@@ -93,8 +104,8 @@ jobs:
     needs: check-vercel-rate-limit
     if: >-
       needs.check-vercel-rate-limit.outputs.deploy == 'true' &&
-      github.event_name == 'push' &&
-      (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/cloudflare')
+      ((github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/cloudflare')) ||
+       (github.event_name == 'pull_request' && github.event.pull_request.base.ref == 'cloudflare'))
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -165,7 +176,7 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 3c6d26004c03dac0c3f2dc6834b7bd56
           COMMIT_SHA: ${{ github.sha }}
-          DEPLOY_BRANCH: ${{ github.ref_name }}
+          DEPLOY_BRANCH: ${{ github.event_name == 'pull_request' && format('pr-{0}-preview', github.event.pull_request.number) || github.ref_name }}
           COMMIT_MESSAGE: ${{ github.event.head_commit.message || 'Portfolio fallback deployment' }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
