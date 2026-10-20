@@ -31,11 +31,19 @@
     }
   ],
   "rewrites": [
-    { "source": "/bookings", "destination": "/bookings.html" }
+    {
+      "source": "/bookings",
+      "destination": "/bookings.html"
+    }
   ],
   "redirects": [
     {
       "source": "/home",
+      "destination": "https://cloudflare.daleymottley-portfolio-fallback.pages.dev",
+      "permanent": true
+    },
+    {
+      "source": "/old",
       "destination": "https://cloudflare.daleymottley-portfolio-fallback.pages.dev",
       "permanent": true
     },
