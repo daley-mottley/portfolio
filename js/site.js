@@ -191,6 +191,7 @@
           assessmentForm.reset();
           if (status) {
             status.textContent = translations[document.documentElement.lang]?.sent || translations.en.sent;
+            status.hidden = false;
             status.setAttribute('role', 'status');
           }
         } catch (error) {
@@ -198,6 +199,7 @@
           if (status) {
             const copy = translations[document.documentElement.lang] || translations.en;
             status.textContent = error && error.message ? copy.sendErrorPrefix + error.message + copy.sendErrorSuffix : copy.sendError;
+            status.hidden = false;
             status.setAttribute('role', 'alert');
           }
         } finally {
