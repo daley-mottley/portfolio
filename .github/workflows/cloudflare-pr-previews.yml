@@ -3,7 +3,7 @@ name: Cloudflare Pages PR previews
 on:
   pull_request:
     branches:
-      - main
+      - cloudflare
     types:
       - opened
       - synchronize
