@@ -63,7 +63,7 @@
 		var i = 0;
 		$('.animate-box').waypoint( function( direction ) {
 
-			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+			if( direction === 'down' ) {
 				
 				i++;
 
@@ -90,9 +90,12 @@
 					
 				}, 100);
 				
+			} else {
+				var el = $(this.element);
+				el.removeClass('animated fadeInLeft fadeInRight fadeInUp fadeIn');
 			}
 
-		} , { offset: '85%' } );
+		} , { offset: 'bottom-in-view' } );
 	};
 
 
